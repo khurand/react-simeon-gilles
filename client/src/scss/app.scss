@@ -1,37 +1,34 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&display=swap');
-@import './config';
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&display=swap");
+@import "./config";
 
 // Header & Carousel
 
 .container {
   // Header
-  .header {
-  }
+  // .header {
+  // }
 
   // Carousel
-  .carousel-slide {
+  .carouselContainer {
     height: 100vh;
-    display: flex;
-    position: relative;
-    overflow: hidden;
 
-    .slide-image {
+    .carousel {
       height: 100%;
       width: 100%;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      margin: auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+      .carousel-inner {
+        width: 100%;
+        height: 100%;
 
-    .content {
-      position: relative;
-      z-index: 2;
+        .carousel-item {
+          height: 100%;
+          width: 100%;
+
+          img {
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
     }
   }
 
@@ -174,71 +171,69 @@
   }
 }
 
-.sectionOne {
-  // #header {
-  //   position: fixed;
-  //   z-index: 2;
-  //   color: #fff;
-  //   width: 100%;
-  //   height: 10%;
-  //   display: flex;
-  //   justify-content: center;
-  //   align-items: center;
-  //   text-align: center;
-  //   padding: 5px;
+// #header {
+//   position: fixed;
+//   z-index: 2;
+//   color: #fff;
+//   width: 100%;
+//   height: 10%;
+//   display: flex;
+//   justify-content: center;
+//   ali.gn-items: center;
+//   text-align: center;
+//   padding: 5px;
 
-  //   .navbar {
-  //     display: flex;
-  //     justify-content: space-between;
-  //     width: 100%;
-  //     align-items: center;
-  //     text-align: center;
-  //     padding: 20px;
+//   .navbar {
+//     display: flex;
+//     justify-content: space-between;
+//     width: 100%;
+//     align-items: center;
+//     text-align: center;
+//     padding: 20px;
 
-  //     .logo:hover {
-  //       @include easeOut();
-  //       transform: scale(1.1);
-  //       cursor: pointer;
-  //       color: $secondary-color;
-  //     }
+//     .logo:hover {
+//       @include easeOut();
+//       transform: scale(1.1);
+//       cursor: pointer;
+//       color: $secondary-color;
+//     }
 
-  //     .nav-links {
-  //       display: flex;
-  //       list-style: none;
-  //       width: 50%;
-  //       justify-content: space-around;
-  //       height: 100%;
-  //       align-items: center;
-  //       font-size: 1.4rem;
+//     .nav-links {
+//       display: flex;
+//       list-style: none;
+//       width: 50%;
+//       justify-content: space-around;
+//       height: 100%;
+//       align-items: center;
+//       font-size: 1.4rem;
 
-  //       li {
-  //         width: 100%;
-  //         height: 100%;
-  //         display: flex;
-  //         justify-content: center;
-  //         align-items: center;
-  //         margin: 5px;
-  //         @include easeOut();
-  //         border-radius: 10px;
-  //         padding: 10px;
-  //         &:hover {
-  //           cursor: pointer;
-  //           transform: scale(1.1);
-  //           background-color: $primary-color;
+//       li {
+//         width: 100%;
+//         height: 100%;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         margin: 5px;
+//         @include easeOut();
+//         border-radius: 10px;
+//         padding: 10px;
+//         &:hover {
+//           cursor: pointer;
+//           transform: scale(1.1);
+//           background-color: $primary-color;
 
-  //           a {
-  //             @include easeOut();
-  //             color: #f8c81e;
-  //           }
-  //         }
+//           a {
+//             @include easeOut();
+//             color: #f8c81e;
+//           }
+//         }
 
-  //         a {
-  //           text-decoration: none;
-  //           color: white;
-  //           font-size: 1.2rem;
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
-}
+//         a {
+//           text-decoration: none;
+//           color: white;
+//           font-size: 1.2rem;
+//         }
+//       }
+//     }
+//   }
+// }
