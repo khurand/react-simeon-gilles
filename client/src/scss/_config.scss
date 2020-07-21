@@ -1,0 +1,36 @@
+$primary-color: #232b4e;
+$secondary-color: #f8c81e;
+
+@mixin easeOut {
+  transition: all 0.3s ease-out;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.5;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+p,
+a {
+  font-family: 'Merriweather', serif;
+}
+
+$error: true;
+
+@mixin test {
+  @if $error {
+    .form-group {
+      border: 1px solid blue;
+    }
+  }
+}
