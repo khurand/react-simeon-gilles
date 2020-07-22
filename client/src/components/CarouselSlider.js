@@ -7,18 +7,25 @@ import image3 from "./img/img3.jpg";
 import image4 from "./img/img4.jpg";
 import image5 from "./img/img5.jpg";
 
+const params = {
+  fade: true,
+  pause: false,
+};
+
 function CarouselSlider() {
   return (
-    <Carousel>
+    <Carousel {...params}>
       {/* 1 */}
       <Carousel.Item>
         <img className='d-block w-100' src={image1} alt='First slide' />
         <Carousel.Caption>
-          <h1 className='text-uppercase mb-2 font-weight-bold'>Titre 1</h1>
-          <p className='mb-5 small'>
-            1 - Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Impedit, tenetur.
-          </p>
+          <div className='col-md-6 offset-md-3 my-auto text-center text-white mb-3 content'>
+            <h1 className='text-uppercase mb-2 font-weight-bold'>Titre 1</h1>
+            <p className='small'>
+              1 - Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Impedit, tenetur.
+            </p>
+          </div>
         </Carousel.Caption>
       </Carousel.Item>
 
@@ -27,9 +34,9 @@ function CarouselSlider() {
         <img className='d-block w-100' src={image2} alt='Third slide' />
 
         <Carousel.Caption>
-          <div className='col-md-6 offset-md-3 my-auto text-center text-white content'>
+          <div className='col-md-6 offset-md-3 my-auto text-center text-white mb-3 content'>
             <h1 className='text-uppercase mb-2 font-weight-bold'>Titre 2</h1>
-            <p className='mb-5 small'>
+            <p className='small'>
               2 - Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Impedit, tenetur.
             </p>
@@ -42,9 +49,9 @@ function CarouselSlider() {
         <img className='d-block w-100' src={image3} alt='Third slide' />
 
         <Carousel.Caption>
-          <div className='col-md-6 offset-md-3 my-auto text-center text-white content'>
+          <div className='col-md-6 offset-md-3 my-auto text-center text-white mb-3 content'>
             <h1 className='text-uppercase mb-2 font-weight-bold'>Titre 3</h1>
-            <p className='mb-5 small'>
+            <p className='small'>
               3 - Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Impedit, tenetur.
             </p>
@@ -57,9 +64,9 @@ function CarouselSlider() {
         <img className='d-block w-100' src={image4} alt='Third slide' />
 
         <Carousel.Caption>
-          <div className='col-md-6 offset-md-3 my-auto text-center text-white content'>
+          <div className='col-md-6 offset-md-3 my-auto text-center text-white mb-3 content'>
             <h1 className='text-uppercase mb-2 font-weight-bold'>Titre 4</h1>
-            <p className='mb-5 small'>
+            <p className='small'>
               4 - Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Impedit, tenetur.
             </p>
@@ -72,9 +79,9 @@ function CarouselSlider() {
         <img className='d-block w-100' src={image5} alt='Third slide' />
 
         <Carousel.Caption>
-          <div className='col-md-6 offset-md-3 my-auto text-center text-white content'>
+          <div className='col-md-6 offset-md-3 my-auto text-center text-white mb-3 content'>
             <h1 className='text-uppercase mb-2 font-weight-bold'>Titre 5</h1>
-            <p className='mb-5 small'>
+            <p className='small'>
               5 - Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Impedit, tenetur.
             </p>
