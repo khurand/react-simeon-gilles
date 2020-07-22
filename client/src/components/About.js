@@ -1,40 +1,53 @@
 import React from "react";
+import {
+  Card,
+  Button,
+  CardImg,
+  CardTitle,
+  CardText,
+  CardDeck,
+  CardSubtitle,
+  CardBody,
+} from "react-bootstrap";
 
 function About() {
   const card = [
     {
-      icon: "icone-1",
+      icon: require("./img/icn/procesador.svg"),
       titre: "card-title-1",
       text:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos, nobis.",
     },
     {
-      icon: "icone-2",
+      icon: require("./img/icn/machine.svg"),
       titre: "card-title-2",
       text:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos, nobis.",
     },
     {
-      icon: "icone-3",
+      icon: require("./img/icn/tarjeta-madre.svg"),
       titre: "card-title-3",
       text:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos, nobis.",
     },
   ];
   return (
-    <div className='about'>
-      <div className='cards'>
-        {card.map((item, index) => {
-          return (
-            <div className='card' key={index}>
-              <div className='card-icon'>{item.icon}</div>
-              <div className='card-title'>{item.titre}</div>
-              <div className='card-text'>{item.text}</div>
-            </div>
-          );
-        })}
-      </div>
-    </div>
+    <CardDeck>
+      {card.map((item, idx) => {
+        return (
+          <Card key={idx}>
+            <Card.Img variant='top' src={item.icon} />
+            <Card.Body>
+              <Card.Title>{item.titre}</Card.Title>
+              <Card.Text>{item.text}</Card.Text>
+            </Card.Body>
+            <Card.Footer>
+              <small className='text-muted'>Last updated 3 mins ago</small>
+            </Card.Footer>
+          </Card>
+        );
+      })}
+    </CardDeck>
   );
 }
 
