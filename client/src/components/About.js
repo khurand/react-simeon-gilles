@@ -1,13 +1,13 @@
 import React from "react";
 import {
   Card,
-  Button,
-  CardImg,
-  CardTitle,
-  CardText,
+  // Button,
+  // CardImg,
+  // CardTitle,
+  // CardText,
   CardDeck,
-  CardSubtitle,
-  CardBody,
+  // CardSubtitle,
+  // CardBody,
 } from "react-bootstrap";
 
 function About() {
@@ -41,9 +41,6 @@ function About() {
               <Card.Title>{item.titre}</Card.Title>
               <Card.Text>{item.text}</Card.Text>
             </Card.Body>
-            <Card.Footer>
-              <small className='text-muted'>Last updated 3 mins ago</small>
-            </Card.Footer>
           </Card>
         );
       })}

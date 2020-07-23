@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./components/Header";
 import CarouselSlider from "./components/CarouselSlider";
 import About from "./components/About";
-import Form from "./components/Form";
+import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
               <About />
             </div>
             <div>
-              <Form />
+              <Contact />
             </div>
             <div>
               <Footer />
