@@ -14,13 +14,13 @@ function App() {
             <div>
               <Header />
             </div>
-            <div className='carouselContainer'>
+            <div className='carousel-container'>
               <CarouselSlider />
             </div>
             <div className='card-container'>
               <About />
             </div>
-            <div>
+            <div className='contact-container'>
               <Contact />
             </div>
             <div>

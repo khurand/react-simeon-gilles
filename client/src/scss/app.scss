@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&display=swap");
 @import "./config";
-
-// Header & Carousel
+@import "contact";
 
 .container {
   // Header
@@ -9,7 +8,7 @@
   // }
 
   // Carousel
-  .carouselContainer {
+  .carousel-container {
     height: 100vh;
 
     .carousel {
@@ -63,67 +62,6 @@
           width: 100px;
         }
       }
-    }
-  }
-
-  //contact form
-  .container {
-    padding: 10px;
-    .row {
-      width: 100%;
-    }
-  }
-  form {
-    width: 60%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #eee;
-    border-radius: 10px;
-
-    .form-group {
-      width: 100%;
-
-      textarea {
-        width: 100%;
-      }
-    }
-
-    .checkbox {
-      display: flex;
-      align-items: center;
-      text-align: center;
-      vertical-align: center;
-      padding: 5px;
-
-      input {
-        margin: 5px;
-      }
-
-      p {
-        margin: auto;
-        font-size: 0.8rem;
-      }
-    }
-
-    .error {
-      color: red;
-      font-size: 0.7rem;
-      text-align: left;
-      width: 100%;
-    }
-
-    .success {
-      color: green;
-      font-size: 0.7rem;
-      text-align: left;
-      width: 100%;
-    }
-
-    .inputError {
-      border-left: 3px solid red;
     }
   }
 

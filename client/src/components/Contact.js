@@ -1,6 +1,13 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Col, Row, Form, InputGroup, FormControl } from "react-bootstrap";
+import {
+  Button,
+  Row,
+  Col,
+  Form,
+  InputGroup,
+  FormControl,
+} from "react-bootstrap";
 
 export default class Contact extends Component {
   constructor(props) {
@@ -144,18 +151,21 @@ export default class Contact extends Component {
   render() {
     return (
       <Form
-        className='container'
+        className='contact mb-3'
         onSubmit={this.handleSubmit}
         noValidate
         method='POST'
-        size='sm'
       >
+        <h3>Contactez-moi</h3>
+
         <Row>
-          <Col md='6' sm='12' className='p-0'>
-            <InputGroup className='mb-3 p-0'>
-              <InputGroup.Prepend>
-                <InputGroup.Text id='basic-addon1'>Prénom</InputGroup.Text>
-              </InputGroup.Prepend>
+          <Col>
+            <InputGroup className='mb-2 prenom'>
+              <InputGroup.Append>
+                <InputGroup.Text id='basic-addon2'>
+                  <i className='fas fa-user'></i>
+                </InputGroup.Text>
+              </InputGroup.Append>
               <FormControl
                 placeholder='Votre prénom'
                 aria-label='prénom'
@@ -166,20 +176,24 @@ export default class Contact extends Component {
                 name='firstName'
                 ref={this.prenom}
                 className={
-                  "form-control" +
-                  (this.state.formErrors.firstNameError ? " inputError" : "")
+                  this.state.formErrors.firstNameError && " inputError"
                 }
               />
+              <InputGroup.Append>
+                <InputGroup.Text id='basic-addon2'>*</InputGroup.Text>
+              </InputGroup.Append>
+              {this.state.formErrors.firstNameError && (
+                <p className='error'>{this.state.formErrors.firstNameError}</p>
+              )}
             </InputGroup>
-            {this.state.formErrors.firstNameError && (
-              <p className='error'>{this.state.formErrors.firstNameError}</p>
-            )}
           </Col>
           <Col>
-            <InputGroup>
-              <InputGroup.Prepend>
-                <InputGroup.Text id='basic-addon1'>Nom</InputGroup.Text>
-              </InputGroup.Prepend>
+            <InputGroup className='mb-2 nom'>
+              <InputGroup.Append>
+                <InputGroup.Text id='basic-addon2'>
+                  <i className='fas fa-user'></i>
+                </InputGroup.Text>
+              </InputGroup.Append>
               <FormControl
                 placeholder='Votre nom'
                 aria-label='Nom'
@@ -189,18 +203,19 @@ export default class Contact extends Component {
                 id='firstName'
                 name='firstName'
                 ref={this.nom}
-                className={
-                  "form-control" +
-                  (this.state.formErrors.lastNameError ? " inputError" : "")
-                }
+                className={this.state.formErrors.lastNameError && " inputError"}
               />
+              <InputGroup.Append>
+                <InputGroup.Text id='basic-addon2'>*</InputGroup.Text>
+              </InputGroup.Append>
+              {this.state.formErrors.lastNameError && (
+                <p className='error'>{this.state.formErrors.lastNameError}</p>
+              )}
             </InputGroup>
-            {this.state.formErrors.lastNameError && (
-              <p className='error'>{this.state.formErrors.lastNameError}</p>
-            )}
           </Col>
         </Row>
-        <InputGroup className='mb-3'>
+
+        <InputGroup className='mb-2'>
           <InputGroup.Prepend>
             <InputGroup.Text id='basic-addon1'>@</InputGroup.Text>
           </InputGroup.Prepend>
@@ -213,34 +228,32 @@ export default class Contact extends Component {
             id='email'
             name='email'
             value={this.state.email}
-            className={
-              "form-control" +
-              (this.state.formErrors.emailError ? " inputError" : "")
-            }
+            className={this.state.formErrors.emailError && " inputError"}
           />
+          <InputGroup.Append>
+            <InputGroup.Text id='basic-addon2'>*</InputGroup.Text>
+          </InputGroup.Append>
+          {this.state.formErrors.emailError && (
+            <p className='error'>{this.state.formErrors.emailError}</p>
+          )}
         </InputGroup>
-        {this.state.formErrors.emailError && (
-          <p className='error'>{this.state.formErrors.emailError}</p>
-        )}
 
-        <div className='form-group'>
-          <textarea
-            name='message'
-            id='message'
+        <InputGroup className='mb-2'>
+          <FormControl
+            as='textarea'
             cols='30'
             rows='10'
             value={this.state.message}
             onChange={this.handleChange}
             placeholder='Message'
-            className={
-              "form-control" +
-              (this.state.formErrors.messageError ? " inputError" : "")
-            }
-          ></textarea>
-        </div>
-        {this.state.formErrors.messageError && (
-          <p className='error'>{this.state.formErrors.messageError}</p>
-        )}
+            name='message'
+            id='message'
+            className={this.state.formErrors.messageError && " inputError"}
+          ></FormControl>
+          {this.state.formErrors.messageError && (
+            <p className='error'>{this.state.formErrors.messageError}</p>
+          )}
+        </InputGroup>
 
         <div className='form-group checkbox'>
           <input
@@ -251,20 +264,19 @@ export default class Contact extends Component {
             onChange={this.handleChange}
           />
           <p>
-            Click si t'es OK avec les conditions du blabla-Corp International
-            Association World Cup Tournament of World Wild Board of Curling qui
-            dit: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
-            corrupti quis autem, iusto ut consequatur!'
+            En soumettant ce formulaire, j'accepte que les informations saisies
+            soient exploitées dans le cadre de la demande de contact et de la
+            relation commerciale qui peut en découler.
           </p>
+          {this.state.formErrors.checkedError && (
+            <p className='error'>{this.state.formErrors.checkedError}</p>
+          )}
         </div>
-        {this.state.formErrors.checkedError && (
-          <p className='error'>{this.state.formErrors.checkedError}</p>
-        )}
 
         <div className='form-group'>
-          <button className='btn btn-primary' type='submit'>
+          <Button type='submit' variant='primary' size='lg' block>
             Envoyer
-          </button>
+          </Button>
         </div>
         {this.state.isSent && (
           <p className='success'>Votre message a bien été envoyé</p>
