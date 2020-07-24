@@ -9,6 +9,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors());
+require('dotenv').config();
 
 app.use(function (err, req, res, next) {
   console.error(err.stack);
@@ -36,8 +37,8 @@ app.post('/send', (req, res) => {
     let transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'webdevkevtest@gmail.com', // generated ethereal user
-        pass: 'Kqbx9jx6!', // generated ethereal password
+        user: process.env.EMAIL, // generated ethereal user
+        pass: process.env.PASSWORD, // generated ethereal password
       },
     });
 
@@ -49,8 +50,9 @@ app.post('/send', (req, res) => {
       html: output, // html body
     });
 
-    console.log('Message sent: %s', info.messageId);
     // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+    console.log('Message sent: %s', info.messageId);
+
     // verify connection configuration
     // transporter.verify(function (error, success) {
     //   if (error) {
