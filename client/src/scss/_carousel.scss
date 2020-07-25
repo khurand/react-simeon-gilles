@@ -1,0 +1,28 @@
+// Carousel
+.carousel-container {
+  height: 100vh;
+
+  .carousel {
+    height: 100%;
+    width: 100%;
+    .carousel-inner {
+      width: 100%;
+      height: 100%;
+
+      .carousel-item {
+        height: 100%;
+        width: 100%;
+
+        img {
+          height: 100%;
+          width: 100%;
+        }
+
+        .content {
+          background-color: rgba(51, 51, 51, 0.7);
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&display=swap');
+
 $primary-color: #232b4e;
 $secondary-color: #f8c81e;
 
@@ -23,14 +25,4 @@ h1 {
 p,
 a {
   font-family: 'Merriweather', serif;
-}
-
-$error: true;
-
-@mixin test {
-  @if $error {
-    .form-group {
-      border: 1px solid blue;
-    }
-  }
 }
