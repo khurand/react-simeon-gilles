@@ -1,55 +1,84 @@
 //contact form
 .contact-container {
-  .contact {
+  padding: 150px 0 150px 0;
+  .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #eee;
     border-radius: 10px;
-    padding: 10px;
+    padding: 50px;
 
-    .error {
-      color: red;
-      font-size: 0.7rem;
-      text-align: left;
-      width: 100%;
-      margin-left: 5px;
-      margin-bottom: 0;
-    }
-    .success {
-      color: green;
-      font-size: 0.7rem;
-      text-align: left;
-      width: 100%;
-    }
+    .contact-info {
+      padding: 10px;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
 
-    .inputError {
-      border-left: 3px solid red;
+      .infos {
+        h5 span {
+          margin-right: 5px;
+          font-size: 1.5rem;
+        }
+      }
     }
 
-    .form-group {
-      width: 100%;
+    // .map {
+    //   padding: 10px;
+    // }
 
-      textarea {
+    .contact {
+      .error {
+        color: red;
+        font-size: 0.7rem;
+        text-align: left;
+        width: 100%;
+        margin-left: 5px;
+        margin-bottom: 0;
+      }
+      .success {
+        color: green;
+        font-size: 0.7rem;
+        text-align: left;
         width: 100%;
       }
-    }
 
-    .checkbox {
-      display: flex;
-      align-items: center;
-      text-align: center;
-      vertical-align: center;
-      padding: 5px;
-
-      input {
-        margin: 5px;
+      .inputError {
+        border-left: 3px solid red;
       }
 
-      p {
-        margin: auto;
-        font-size: 0.8rem;
+      .form-group {
+        width: 100%;
+
+        textarea {
+          width: 100%;
+        }
+
+        button .paper-plane {
+          font-size: 1.5rem;
+          margin-right: 10px;
+        }
+      }
+
+      .checkbox {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        vertical-align: center;
+        padding: 5px;
+
+        input {
+          margin: 5px;
+        }
+
+        p {
+          margin: auto;
+          font-size: 0.8rem;
+        }
       }
     }
   }

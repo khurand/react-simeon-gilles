@@ -20,6 +20,8 @@
     "express": "^4.17.1",
     "nodemailer": "^6.4.10",
     "nodemon": "^2.0.4",
-    "react-bootstrap": "^1.2.2"
+    "react-bootstrap": "^1.2.2",
+    "react-iframe": "^1.8.0",
+    "react-scroll-parallax": "^2.3.4"
   }
 }
