@@ -1,0 +1,14 @@
+.parallax-container {
+  .react-parallax-content {
+    height: 450px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .parallax-banner-text {
+      padding: 1rem;
+      background: rgba(238, 238, 238, 0.7);
+    }
+  }
+}
