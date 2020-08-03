@@ -17,6 +17,7 @@ function App() {
           <div className='carousel-container'>
             <CarouselSlider />
           </div>
+          <hr />
           <div className='card-container'>
             <About />
           </div>

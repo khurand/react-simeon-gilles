@@ -1,4 +1,9 @@
 .container-fluid {
   margin: 0 !important;
   padding: 0 !important;
+
+  hr {
+    margin: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
 }
