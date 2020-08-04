@@ -29,6 +29,7 @@ function App() {
           <div className='contact-container'>
             <Contact />
           </div>
+          <hr />
           <div className='footer-container'>
             <Footer />
           </div>
