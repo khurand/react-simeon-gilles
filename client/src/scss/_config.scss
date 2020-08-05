@@ -1,11 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&display=swap");
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
+// Colors
 $primary-color: #232b4e;
 $secondary-color: #f8c81e;
+$bg-light: #eee;
+$bg-dark: #333;
 
+// Effet transition
 @mixin easeOut {
   transition: all 0.3s ease-out;
+}
+
+// Box shadow
+@mixin boxShadow {
+  box-shadow: rgba(72, 94, 116, 0.7) 0px 20px 30px -15px;
 }
 
 * {

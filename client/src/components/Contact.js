@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-// import Iframe from 'react-iframe';
-import ContactInfo from './ContactInfo';
+import React, { Component } from "react";
+import axios from "axios";
+import ContactInfo from "./ContactInfo";
+import { Popover, PopoverHeader, PopoverBody } from "reactstrap";
 import {
   Button,
   Row,
@@ -9,7 +9,7 @@ import {
   Form,
   InputGroup,
   FormControl,
-} from 'react-bootstrap';
+} from "react-bootstrap";
 
 export default class Contact extends Component {
   constructor(props) {
@@ -17,16 +17,16 @@ export default class Contact extends Component {
     this.prenom = React.createRef();
     this.nom = React.createRef();
     this.state = {
-      email: '',
-      message: '',
+      email: "",
+      message: "",
       conditions: false,
       isSent: false,
       formErrors: {
-        firstNameError: '',
-        lastNameError: '',
-        emailError: '',
-        messageError: '',
-        checkedError: '',
+        firstNameError: "",
+        lastNameError: "",
+        emailError: "",
+        messageError: "",
+        checkedError: "",
       },
     };
     this.handleChange = this.handleChange.bind(this);
@@ -37,7 +37,7 @@ export default class Contact extends Component {
   handleChange(e) {
     const name = e.target.name;
     const type = e.target.type;
-    const value = type === 'checkbox' ? e.target.checked : e.target.value;
+    const value = type === "checkbox" ? e.target.checked : e.target.value;
     this.setState({
       [name]: value,
     });
@@ -45,32 +45,32 @@ export default class Contact extends Component {
 
   //Validation du formulaire
   validate = () => {
-    let firstNameError = '';
-    let lastNameError = '';
-    let emailError = '';
-    let messageError = '';
-    let checkedError = '';
+    let firstNameError = "";
+    let lastNameError = "";
+    let emailError = "";
+    let messageError = "";
+    let checkedError = "";
 
     if (!this.prenom.current.value) {
-      firstNameError = 'Prénom requis';
+      firstNameError = "Prénom requis";
     }
 
     if (!this.nom.current.value) {
-      lastNameError = 'Nom requis';
+      lastNameError = "Nom requis";
     }
 
     if (!this.state.email) {
-      emailError = 'Email requis';
-    } else if (!this.state.email.includes('@')) {
-      emailError = 'Email invalide';
+      emailError = "Email requis";
+    } else if (!this.state.email.includes("@")) {
+      emailError = "Email invalide";
     }
 
     if (!this.state.message) {
-      messageError = 'Message requis';
+      messageError = "Message requis";
     }
 
     if (this.state.conditions === false) {
-      checkedError = 'Veuillez cocher';
+      checkedError = "Veuillez cocher";
     }
 
     if (
@@ -117,7 +117,7 @@ export default class Contact extends Component {
       // Liaison serveur front & back via axios et une fontion asynchrone
       async function getData() {
         try {
-          const response = await axios.post('http://localhost:5000/send', data);
+          const response = await axios.post("http://localhost:5000/send", data);
           console.log(response);
         } catch (error) {
           console.error(error);
@@ -128,20 +128,20 @@ export default class Contact extends Component {
       // console.log(data);
 
       // Reset inputs non-controllés
-      this.prenom.current.value = '';
-      this.nom.current.value = '';
+      this.prenom.current.value = "";
+      this.nom.current.value = "";
 
       // Reset des valeurs inputs controllés après l'envoi du formulaire
       this.setState({
-        email: '',
-        message: '',
+        email: "",
+        message: "",
         conditions: false,
         formErrors: {
-          firstNameError: '',
-          lastNameError: '',
-          emailError: '',
-          messageError: '',
-          checkedError: '',
+          firstNameError: "",
+          lastNameError: "",
+          emailError: "",
+          messageError: "",
+          checkedError: "",
         },
       });
     }
@@ -150,122 +150,136 @@ export default class Contact extends Component {
     setTimeout(() => this.setState({ isSent: false }), 3000);
   }
 
+  state = {
+    popoverOpen: false,
+  };
+
+  toggle = () => {
+    this.setState({ popoverOpen: true });
+    setTimeout(() => this.setState({ popoverOpen: false }), 3000);
+  };
+
   render() {
     return (
-      <div className="container">
+      <div className='container'>
         <Row>
-          <Col>
+          <Col className='col-md-4 col-sm-12'>
             <ContactInfo />
           </Col>
-          <Col>
+          <Col className='col-md-8 col-sm-12'>
             <Form
-              className="contact mb-3"
+              className='contact mb-3'
               onSubmit={this.handleSubmit}
               noValidate
-              method="POST"
+              method='POST'
             >
-              <InputGroup className="mb-2 prenom">
+              <InputGroup className='mb-2 prenom'>
                 <InputGroup.Append>
-                  <InputGroup.Text id="basic-addon2">
-                    <i className="fas fa-user"></i>
+                  <InputGroup.Text className='basic-addon1'>
+                    <i className='fas fa-user'></i>
                   </InputGroup.Text>
                 </InputGroup.Append>
                 <FormControl
-                  placeholder="Votre prénom"
-                  aria-label="prénom"
-                  aria-describedby="basic-addon1"
-                  type="text"
+                  placeholder='Votre prénom'
+                  aria-label='prénom'
+                  aria-describedby='basic-addon1'
+                  type='text'
                   onChange={this.handleChange}
-                  id="firstName"
-                  name="firstName"
+                  id='firstName'
+                  name='firstName'
                   ref={this.prenom}
                   className={
-                    this.state.formErrors.firstNameError && ' inputError'
+                    this.state.formErrors.firstNameError && " inputError"
                   }
                 />
                 <InputGroup.Append>
-                  <InputGroup.Text id="basic-addon2">*</InputGroup.Text>
+                  <InputGroup.Text className='basic-addon2'>*</InputGroup.Text>
                 </InputGroup.Append>
                 {this.state.formErrors.firstNameError && (
-                  <p className="error">
+                  <p className='error'>
                     {this.state.formErrors.firstNameError}
                   </p>
                 )}
               </InputGroup>
-              <InputGroup className="mb-2 nom">
+              <InputGroup className='mb-2 nom'>
                 <InputGroup.Append>
-                  <InputGroup.Text id="basic-addon2">
-                    <i className="fas fa-user"></i>
+                  <InputGroup.Text className='basic-addon1'>
+                    <i className='fas fa-user'></i>
                   </InputGroup.Text>
                 </InputGroup.Append>
                 <FormControl
-                  placeholder="Votre nom"
-                  aria-label="Nom"
-                  aria-describedby="basic-addon1"
-                  type="text"
+                  placeholder='Votre nom'
+                  aria-label='Nom'
+                  aria-describedby='basic-addon1'
+                  type='text'
                   onChange={this.handleChange}
-                  id="firstName"
-                  name="firstName"
+                  id='firstName'
+                  name='firstName'
                   ref={this.nom}
                   className={
-                    this.state.formErrors.lastNameError && ' inputError'
+                    this.state.formErrors.lastNameError && " inputError"
                   }
                 />
                 <InputGroup.Append>
-                  <InputGroup.Text id="basic-addon2">*</InputGroup.Text>
+                  <InputGroup.Text className='basic-addon2'>*</InputGroup.Text>
                 </InputGroup.Append>
                 {this.state.formErrors.lastNameError && (
-                  <p className="error">{this.state.formErrors.lastNameError}</p>
+                  <p className='error'>{this.state.formErrors.lastNameError}</p>
                 )}
               </InputGroup>
 
-              <InputGroup className="mb-2">
+              <InputGroup className='mb-2'>
                 <InputGroup.Prepend>
-                  <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
+                  <InputGroup.Text className='basic-addon1'>@</InputGroup.Text>
                 </InputGroup.Prepend>
                 <FormControl
-                  placeholder="Email"
-                  aria-label="Email"
-                  aria-describedby="basic-addon1"
-                  type="email"
+                  placeholder='Email'
+                  aria-label='Email'
+                  aria-describedby='basic-addon1'
+                  type='email'
                   onChange={this.handleChange}
-                  id="email"
-                  name="email"
+                  id='email'
+                  name='email'
                   value={this.state.email}
-                  className={this.state.formErrors.emailError && ' inputError'}
+                  className={this.state.formErrors.emailError && " inputError"}
                 />
                 <InputGroup.Append>
-                  <InputGroup.Text id="basic-addon2">*</InputGroup.Text>
+                  <InputGroup.Text className='basic-addon2'>*</InputGroup.Text>
                 </InputGroup.Append>
                 {this.state.formErrors.emailError && (
-                  <p className="error">{this.state.formErrors.emailError}</p>
+                  <p className='error'>{this.state.formErrors.emailError}</p>
                 )}
               </InputGroup>
 
-              <InputGroup className="mb-2">
+              <InputGroup className='mb-2'>
+                <InputGroup.Append>
+                  <InputGroup.Text className='basic-addon1'>*</InputGroup.Text>
+                </InputGroup.Append>
                 <FormControl
-                  as="textarea"
-                  cols="30"
-                  rows="10"
+                  as='textarea'
+                  cols='30'
+                  rows='10'
                   value={this.state.message}
                   onChange={this.handleChange}
-                  placeholder="Message"
-                  name="message"
-                  id="message"
+                  placeholder='Message'
+                  name='message'
+                  id='message'
                   className={
-                    this.state.formErrors.messageError && ' inputError'
+                    this.state.formErrors.messageError && " inputError"
                   }
                 ></FormControl>
                 {this.state.formErrors.messageError && (
-                  <p className="error">{this.state.formErrors.messageError}</p>
+                  <p className='error'>{this.state.formErrors.messageError}</p>
                 )}
               </InputGroup>
 
-              <div className="form-group checkbox">
+              <InputGroup className='mb-2'></InputGroup>
+
+              <div className='form-group checkbox'>
                 <input
-                  type="checkbox"
-                  name="conditions"
-                  id="conditions"
+                  type='checkbox'
+                  name='conditions'
+                  id='conditions'
                   checked={this.state.conditions}
                   onChange={this.handleChange}
                 />
@@ -274,36 +288,48 @@ export default class Contact extends Component {
                   saisies soient exploitées dans le cadre de la demande de
                   contact et de la relation commerciale qui peut en découler.
                 </p>
-                {this.state.formErrors.checkedError && (
-                  <p className="error">{this.state.formErrors.checkedError}</p>
-                )}
+                {/* {this.state.formErrors.checkedError && (
+                  <p className='error'>{this.state.formErrors.checkedError}</p>
+                )} */}
               </div>
 
-              <div className="form-group">
-                <Button type="submit" variant="primary" size="lg" block>
-                  <span className="paper-plane">
-                    <i className="far fa-paper-plane"></i>
+              <div className='form-group button'>
+                <Button
+                  type='submit'
+                  variant='outline-primary'
+                  size='md'
+                  // block
+                  className='btn'
+                  id='popover'
+                >
+                  <span className='paper-plane'>
+                    <i className='far fa-paper-plane'></i>
                   </span>
                   Envoyer
                 </Button>
+                <Popover
+                  placement='right'
+                  isOpen={this.state.popoverOpen}
+                  target='popover'
+                  toggle={this.toggle}
+                >
+                  <PopoverHeader>
+                    Veuillez vérifier les champs suivants:
+                  </PopoverHeader>
+                  <PopoverBody>
+                    {this.state.formErrors.checkedError && (
+                      <p className='error'>
+                        {this.state.formErrors.checkedError}
+                      </p>
+                    )}
+                  </PopoverBody>
+                </Popover>
               </div>
               {this.state.isSent && (
-                <p className="success">Votre message a bien été envoyé</p>
+                <p className='success'>Votre message a bien été envoyé</p>
               )}
             </Form>
           </Col>
-          {/* <Iframe
-          url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2838.7013220528656!2d1.2238742163387937!3d44.6442344441328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ac9e261de68331%3A0x406f69c2f3fcd20!2s46250%20Cazals!5e0!3m2!1sfr!2sfr!4v1596197124243!5m2!1sfr!2sfr"
-          width="600"
-          height={100 + '%'}
-          frameborder="0"
-          style={{ border: '0' }}
-          allowfullscreen=""
-          S
-          aria-hidden="false"
-          tabindex="0"
-          className="map"
-        /> */}
         </Row>
       </div>
     );

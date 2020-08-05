@@ -1,6 +1,6 @@
 //contact form
 .contact-container {
-  padding: 150px 0 150px 0;
+  // padding: 150px 0 150px 0;
   .container {
     display: flex;
     justify-content: center;
@@ -8,9 +8,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #eee;
+    background-color: $bg-light;
     border-radius: 10px;
-    padding: 50px;
+    padding: 20px;
+    @include boxShadow();
 
     .contact-info {
       padding: 10px;
@@ -19,17 +20,33 @@
       justify-content: center;
       flex-direction: column;
 
+      hr {
+        background: #333;
+      }
+
       .infos {
+        display: flex;
+        // flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 100%;
+        border-radius: 10px;
+
+        h5 {
+          text-decoration: underline;
+        }
+
+        p {
+          margin-top: 1rem;
+        }
+
         h5 span {
-          margin-right: 5px;
+          margin-right: 10px;
           font-size: 1.5rem;
         }
       }
     }
-
-    // .map {
-    //   padding: 10px;
-    // }
 
     .contact {
       .error {
@@ -37,8 +54,7 @@
         font-size: 0.7rem;
         text-align: left;
         width: 100%;
-        margin-left: 5px;
-        margin-bottom: 0;
+        margin: 5px 5px 0 0;
       }
       .success {
         color: green;
@@ -62,14 +78,30 @@
           font-size: 1.5rem;
           margin-right: 10px;
         }
+
+        button {
+          border-radius: 10px;
+          border: 2px solid $bg-light;
+          padding: 8px 20px;
+          font-size: 1.3rem;
+          margin-top: 20px;
+          letter-spacing: 0.2rem;
+        }
+
+        .btn {
+          &:hover {
+            box-shadow: inset 10.5rem 0 0 0 $primary-color;
+            color: #fff;
+          }
+        }
       }
 
       .checkbox {
         display: flex;
         align-items: center;
         text-align: center;
-        vertical-align: center;
         padding: 5px;
+        margin: 20px 0;
 
         input {
           margin: 5px;

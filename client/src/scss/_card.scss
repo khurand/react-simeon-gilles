@@ -21,6 +21,7 @@
         margin-bottom: 30px;
         min-height: 300px;
         @include easeOut();
+        @include boxShadow();
 
         &:hover {
           transform: translateY(-10px);

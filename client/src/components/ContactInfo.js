@@ -1,34 +1,34 @@
-import React from 'react';
+import React from "react";
 
 const ContactInfo = () => {
   return (
-    <div className="contact-info">
-      <div className="infos">
+    <div className='contact-info'>
+      <div className='row infos'>
         <h5>
           <span>
-            <i className="fas fa-map-marker-alt"></i>
+            <i className='fas fa-map-marker-alt'></i>
           </span>
-          Mon Adresse
+          Mon Adresse :
         </h5>
         <p>55 rue des Peupliers, 42qch CAZALS</p>
       </div>
       <hr />
-      <div className="infos">
+      <div className='row infos'>
         <h5>
           <span>
-            <i className="fas fa-mobile-alt"></i>
+            <i className='fas fa-mobile-alt'></i>
           </span>
-          Mon Téléphone
+          Mon Téléphone :
         </h5>
         <p>0123456789</p>
       </div>
       <hr />
-      <div className="infos">
+      <div className='row infos'>
         <h5>
           <span>
-            <i className="fas fa-at"></i>
+            <i className='fas fa-at'></i>
           </span>
-          Mon Email
+          Mon Email :
         </h5>
         <p>gilles.simeon@mail.test</p>
         <hr />

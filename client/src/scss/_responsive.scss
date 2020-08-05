@@ -1,4 +1,4 @@
-// @media XS (max-width: 575.98px)
+// Extra small devices (portrait phones, less than 576px)
 @include media-breakpoint-only(xs) {
   // Footer
   .footer .row {
@@ -9,13 +9,51 @@
 
     .content {
       margin: 1em 0;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  // Form
+  .contact-container {
+    padding: 10px;
+    .row {
+      display: flex;
+      flex-direction: column;
+
+      .contact-info {
+        width: 100%;
+
+        hr {
+          margin: 3rem 0 1rem 0;
+        }
+      }
+
+      .button {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        .btn {
+          width: 100%;
+        }
+      }
     }
   }
 }
 
-// @media MD (min-width: 768px) and (max-width: 991.98px)
+// Medium devices (tablets, 768px to 992px)
 @include media-breakpoint-only(md) {
-  .content-text p {
-    font-size: 0.8rem;
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@include media-breakpoint-only(lg) {
+  .content {
+    display: flex;
+    flex-direction: column;
   }
 }
