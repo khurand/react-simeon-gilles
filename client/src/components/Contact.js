@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import ContactInfo from "./ContactInfo";
-import { Popover, PopoverHeader, PopoverBody } from "reactstrap";
 import {
   Button,
   Row,
@@ -9,6 +8,8 @@ import {
   Form,
   InputGroup,
   FormControl,
+  Alert,
+  Spinner,
 } from "react-bootstrap";
 
 export default class Contact extends Component {
@@ -21,6 +22,7 @@ export default class Contact extends Component {
       message: "",
       conditions: false,
       isSent: false,
+      isNotSent: false,
       formErrors: {
         firstNameError: "",
         lastNameError: "",
@@ -52,25 +54,27 @@ export default class Contact extends Component {
     let checkedError = "";
 
     if (!this.prenom.current.value) {
-      firstNameError = "Prénom requis";
+      firstNameError = "Un prénom est requis.";
     }
 
     if (!this.nom.current.value) {
-      lastNameError = "Nom requis";
+      lastNameError = "Un nom est requis.";
     }
 
     if (!this.state.email) {
-      emailError = "Email requis";
-    } else if (!this.state.email.includes("@")) {
-      emailError = "Email invalide";
+      emailError = "Une adresse mail est requise.";
+    } else if (
+      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(this.state.email)
+    ) {
+      emailError = "Cet email est invalide";
     }
 
     if (!this.state.message) {
-      messageError = "Message requis";
+      messageError = "Un message est requis.";
     }
 
     if (this.state.conditions === false) {
-      checkedError = "Veuillez cocher";
+      checkedError = "Les conditions doivent être acceptées.";
     }
 
     if (
@@ -93,6 +97,7 @@ export default class Contact extends Component {
           checkedError,
         },
       }));
+      this.setState({ isNotSent: true });
       return false;
     }
     // Si les conditions du formulaire sont valides, le mail est envoyé
@@ -107,6 +112,8 @@ export default class Contact extends Component {
     const isValid = this.validate();
 
     if (isValid) {
+      this.setState({ isNotSent: false });
+
       const data = {
         prenom: this.prenom.current.value,
         nom: this.nom.current.value,
@@ -114,7 +121,7 @@ export default class Contact extends Component {
         message: this.state.message,
       };
 
-      // Liaison serveur front & back via axios et une fontion asynchrone
+      // Liaison serveur front & back via axios en asynchrone
       async function getData() {
         try {
           const response = await axios.post("http://localhost:5000/send", data);
@@ -123,7 +130,6 @@ export default class Contact extends Component {
           console.error(error);
         }
       }
-
       getData();
       // console.log(data);
 
@@ -146,18 +152,9 @@ export default class Contact extends Component {
       });
     }
 
-    // Le message de succès d'envoi du mail disparaît au bout de 3s avec isSent qui repasse en false
+    // Le message de succès d'envoi du mail disparaît au bout de 3s et isSent repasse en false
     setTimeout(() => this.setState({ isSent: false }), 3000);
   }
-
-  state = {
-    popoverOpen: false,
-  };
-
-  toggle = () => {
-    this.setState({ popoverOpen: true });
-    setTimeout(() => this.setState({ popoverOpen: false }), 3000);
-  };
 
   render() {
     return (
@@ -195,11 +192,6 @@ export default class Contact extends Component {
                 <InputGroup.Append>
                   <InputGroup.Text className='basic-addon2'>*</InputGroup.Text>
                 </InputGroup.Append>
-                {this.state.formErrors.firstNameError && (
-                  <p className='error'>
-                    {this.state.formErrors.firstNameError}
-                  </p>
-                )}
               </InputGroup>
               <InputGroup className='mb-2 nom'>
                 <InputGroup.Append>
@@ -223,9 +215,6 @@ export default class Contact extends Component {
                 <InputGroup.Append>
                   <InputGroup.Text className='basic-addon2'>*</InputGroup.Text>
                 </InputGroup.Append>
-                {this.state.formErrors.lastNameError && (
-                  <p className='error'>{this.state.formErrors.lastNameError}</p>
-                )}
               </InputGroup>
 
               <InputGroup className='mb-2'>
@@ -246,14 +235,13 @@ export default class Contact extends Component {
                 <InputGroup.Append>
                   <InputGroup.Text className='basic-addon2'>*</InputGroup.Text>
                 </InputGroup.Append>
-                {this.state.formErrors.emailError && (
-                  <p className='error'>{this.state.formErrors.emailError}</p>
-                )}
               </InputGroup>
 
               <InputGroup className='mb-2'>
                 <InputGroup.Append>
-                  <InputGroup.Text className='basic-addon1'>*</InputGroup.Text>
+                  <InputGroup.Text className='basic-addon1'>
+                    <i class='far fa-envelope'></i>
+                  </InputGroup.Text>
                 </InputGroup.Append>
                 <FormControl
                   as='textarea'
@@ -268,9 +256,9 @@ export default class Contact extends Component {
                     this.state.formErrors.messageError && " inputError"
                   }
                 ></FormControl>
-                {this.state.formErrors.messageError && (
-                  <p className='error'>{this.state.formErrors.messageError}</p>
-                )}
+                <InputGroup.Append>
+                  <InputGroup.Text className='basic-addon1'>*</InputGroup.Text>
+                </InputGroup.Append>
               </InputGroup>
 
               <InputGroup className='mb-2'></InputGroup>
@@ -280,6 +268,7 @@ export default class Contact extends Component {
                   type='checkbox'
                   name='conditions'
                   id='conditions'
+                  className='checkbox'
                   checked={this.state.conditions}
                   onChange={this.handleChange}
                 />
@@ -288,46 +277,69 @@ export default class Contact extends Component {
                   saisies soient exploitées dans le cadre de la demande de
                   contact et de la relation commerciale qui peut en découler.
                 </p>
-                {/* {this.state.formErrors.checkedError && (
-                  <p className='error'>{this.state.formErrors.checkedError}</p>
-                )} */}
               </div>
 
-              <div className='form-group button'>
-                <Button
-                  type='submit'
-                  variant='outline-primary'
-                  size='md'
-                  // block
-                  className='btn'
-                  id='popover'
-                >
-                  <span className='paper-plane'>
-                    <i className='far fa-paper-plane'></i>
-                  </span>
-                  Envoyer
-                </Button>
-                <Popover
-                  placement='right'
-                  isOpen={this.state.popoverOpen}
-                  target='popover'
-                  toggle={this.toggle}
-                >
-                  <PopoverHeader>
-                    Veuillez vérifier les champs suivants:
-                  </PopoverHeader>
-                  <PopoverBody>
+              {/* Message erreur envoi */}
+              {this.state.isNotSent && (
+                <Alert variant='danger' className='alert-danger'>
+                  <Alert.Heading className='alert-title'>
+                    <i class='fas fa-bug mr-3'></i>
+                    <h5>Oups... Quelque-chose ne va pas...</h5>
+                  </Alert.Heading>
+                  <div className='alert-msg mt-3'>
+                    {this.state.formErrors.firstNameError && (
+                      <p className='error'>
+                        {this.state.formErrors.firstNameError}
+                      </p>
+                    )}
+                    {this.state.formErrors.lastNameError && (
+                      <p className='error'>
+                        {this.state.formErrors.lastNameError}
+                      </p>
+                    )}
+                    {this.state.formErrors.emailError && (
+                      <p className='error'>
+                        {this.state.formErrors.emailError}
+                      </p>
+                    )}
+                    {this.state.formErrors.messageError && (
+                      <p className='error'>
+                        {this.state.formErrors.messageError}
+                      </p>
+                    )}
                     {this.state.formErrors.checkedError && (
                       <p className='error'>
                         {this.state.formErrors.checkedError}
                       </p>
                     )}
-                  </PopoverBody>
-                </Popover>
-              </div>
-              {this.state.isSent && (
-                <p className='success'>Votre message a bien été envoyé</p>
+                  </div>
+                </Alert>
               )}
+
+              {/* Message succes envoi */}
+              {this.state.isSent && (
+                <Alert variant='success' className='alert-success'>
+                  <Alert.Heading className='alert-title'>
+                    <i className='far fa-paper-plane mr-3'></i>
+                    <h5>Votre message a bien été envoyé !</h5>
+                  </Alert.Heading>
+                </Alert>
+              )}
+
+              <div className='form-group button'>
+                <Button
+                  type='submit'
+                  variant='primary'
+                  size='md'
+                  className='btn'
+                  onClick={() => {
+                    this.setState({ toggleAlert: true });
+                  }}
+                >
+                  {/* <Spinner animation="border" variant="primary" /> */}
+                  Envoyer
+                </Button>
+              </div>
             </Form>
           </Col>
         </Row>

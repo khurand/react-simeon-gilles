@@ -1,22 +1,22 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const nodemailer = require('nodemailer');
-const cookieParser = require('cookie-parser');
-const cors = require('cors');
+const express = require("express");
+const bodyParser = require("body-parser");
+const nodemailer = require("nodemailer");
+const cookieParser = require("cookie-parser");
+const cors = require("cors");
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors());
-require('dotenv').config();
+require("dotenv").config();
 
 app.use(function (err, req, res, next) {
   console.error(err.stack);
-  res.status(500).send('Something broke!');
+  res.status(500).send("Something broke!");
 });
 
-app.post('/send', (req, res) => {
+app.post("/send", (req, res) => {
   console.log(req.body);
 
   const output = `
@@ -35,7 +35,8 @@ app.post('/send', (req, res) => {
 
   async function mail() {
     let transporter = nodemailer.createTransport({
-      service: 'gmail',
+      host: "smtp.gmail.com",
+      service: "gmail",
       auth: {
         user: process.env.EMAIL, // generated ethereal user
         pass: process.env.PASSWORD, // generated ethereal password
@@ -45,24 +46,24 @@ app.post('/send', (req, res) => {
     // send mail with defined transport object
     let info = await transporter.sendMail({
       from: `Site de Gilles SIMEON <${req.body.email}>`, // sender address
-      to: 'webdevkevtest@gmail.com', // list of receivers
-      subject: 'Vous avez un nouveau message', // Subject line
+      to: "webdevkevtest@gmail.com", // list of receivers
+      subject: "Vous avez un nouveau message", // Subject line
       html: output, // html body
     });
 
     // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-    console.log('Message sent: %s', info.messageId);
+    console.log("Message sent: %s", info.messageId);
 
     // verify connection configuration
     // transporter.verify(function (error, success) {
     //   if (error) {
     //     console.log(error);
     //   } else {
-    //     console.log('Server is ready to take our messages');
+    //     console.log("Server is ready to take our messages");
     //   }
     // });
   }
   mail().catch(console.error);
 });
 
-app.listen(5000, () => console.log('server started at port 5000'));
+app.listen(5000, () => console.log("server started at port 5000"));

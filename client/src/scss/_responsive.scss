@@ -29,6 +29,20 @@
         }
       }
 
+      .alert-title {
+        svg {
+          font-size: 1.6rem !important;
+        }
+
+        h5 {
+          font-size: 1rem !important;
+        }
+      }
+
+      .alert-msg p {
+        font-size: 0.8rem !important;
+      }
+
       .button {
         display: flex;
         justify-content: center;

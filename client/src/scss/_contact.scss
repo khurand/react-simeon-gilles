@@ -20,30 +20,20 @@
       justify-content: center;
       flex-direction: column;
 
-      hr {
-        background: #333;
-      }
+      .list-group-item {
+        .infos {
+          &-text {
+            display: flex;
+            flex-direction: column;
 
-      .infos {
-        display: flex;
-        // flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        height: 100%;
-        border-radius: 10px;
+            h5 svg {
+              color: $primary-color;
+            }
 
-        h5 {
-          text-decoration: underline;
-        }
-
-        p {
-          margin-top: 1rem;
-        }
-
-        h5 span {
-          margin-right: 10px;
-          font-size: 1.5rem;
+            p {
+              margin-left: 20px;
+            }
+          }
         }
       }
     }
@@ -51,20 +41,53 @@
     .contact {
       .error {
         color: red;
-        font-size: 0.7rem;
+        font-size: 1rem;
         text-align: left;
         width: 100%;
         margin: 5px 5px 0 0;
       }
-      .success {
-        color: green;
-        font-size: 0.7rem;
-        text-align: left;
-        width: 100%;
-      }
 
       .inputError {
         border-left: 3px solid red;
+      }
+
+      .alert {
+        padding-left: 30px;
+
+        .alert-title {
+          margin: 0;
+        }
+      }
+
+      .alert-danger {
+        .alert-title {
+          display: flex;
+          align-items: center;
+          margin: 0;
+
+          h5 {
+            margin: 0;
+          }
+
+          .fa-bug {
+            font-size: 2rem;
+          }
+        }
+      }
+
+      .alert-success {
+        .alert-title {
+          display: flex;
+          align-items: center;
+
+          h5 {
+            margin: 0;
+          }
+
+          .fa-paper-plane {
+            font-size: 2rem;
+          }
+        }
       }
 
       .form-group {
@@ -74,42 +97,33 @@
           width: 100%;
         }
 
-        button .paper-plane {
-          font-size: 1.5rem;
-          margin-right: 10px;
-        }
-
         button {
           border-radius: 10px;
-          border: 2px solid $bg-light;
+          border: 2px solid $primary-color;
           padding: 8px 20px;
           font-size: 1.3rem;
           margin-top: 20px;
           letter-spacing: 0.2rem;
+          font-weight: bold;
         }
 
         .btn {
-          &:hover {
-            box-shadow: inset 10.5rem 0 0 0 $primary-color;
-            color: #fff;
+          &:active {
+            background: #fff;
+            color: $primary-color;
           }
         }
       }
 
       .checkbox {
         display: flex;
-        align-items: center;
-        text-align: center;
-        padding: 5px;
-        margin: 20px 0;
 
         input {
-          margin: 5px;
+          margin: 5px 15px 5px 5px;
         }
 
         p {
-          margin: auto;
-          font-size: 0.8rem;
+          font-size: 0.9rem;
         }
       }
     }
