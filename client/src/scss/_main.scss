@@ -1,9 +1,35 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  line-height: 1.5;
+  background: $primary-color;
+  color: set-text-color($primary-color);
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+p,
+a {
+  font-family: "Merriweather", serif;
+}
+
 .container-fluid {
   margin: 0 !important;
   padding: 0 !important;
+  height: 100%;
 
-  hr {
-    margin: 3rem;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+  .main {
+    height: 100%;
+    hr {
+      margin: 3rem;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
   }
 }

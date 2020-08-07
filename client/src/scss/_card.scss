@@ -21,15 +21,15 @@
         margin-bottom: 30px;
         min-height: 300px;
         @include easeOut();
-        @include boxShadow();
+        background: $primary-color;
+        border: 1px solid $secondary-color;
+        box-shadow: 0 2px 2.4px rgba(0, 0, 0, 0.034),
+          0 5.3px 6px rgba(0, 0, 0, 0.041), 0 10.9px 12.2px rgba(0, 0, 0, 0.045),
+          0 21.3px 25.2px rgba(0, 0, 0, 0.051), 0 57px 69px rgba(0, 0, 0, 0.08);
 
         &:hover {
+          @include boxShadow();
           transform: translateY(-10px);
-          box-shadow: 0 2px 2.4px rgba(0, 0, 0, 0.034),
-            0 5.3px 6px rgba(0, 0, 0, 0.041),
-            0 10.9px 12.2px rgba(0, 0, 0, 0.045),
-            0 21.3px 25.2px rgba(0, 0, 0, 0.051),
-            0 57px 69px rgba(0, 0, 0, 0.08);
         }
 
         .card-img-top {
@@ -43,6 +43,7 @@
           justify-content: center;
           align-items: center;
           text-align: center;
+          color: set-text-color($primary-color);
 
           .card-text {
             font-size: 1rem;

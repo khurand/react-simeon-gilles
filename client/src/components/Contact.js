@@ -329,7 +329,6 @@ export default class Contact extends Component {
               <div className='form-group button'>
                 <Button
                   type='submit'
-                  variant='primary'
                   size='md'
                   className='btn'
                   onClick={() => {

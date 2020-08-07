@@ -8,7 +8,7 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className='app' style={appStyle}>
+    <div className='app'>
       <div className='navbar-container'>
         <Header />
       </div>
@@ -29,19 +29,13 @@ function App() {
           <div className='contact-container'>
             <Contact />
           </div>
-          <hr />
-          <div className='footer-container'>
-            <Footer />
-          </div>
         </div>
+      </div>
+      <div className='footer-container'>
+        <Footer />
       </div>
     </div>
   );
 }
-
-const appStyle = {
-  background:
-    "linear-gradient(90deg, rgba(0,82,212,1) 0%, rgba(67,100,247,1) 35%, rgba(111,177,252,1) 100%)",
-};
 
 export default App;
