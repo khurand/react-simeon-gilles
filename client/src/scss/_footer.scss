@@ -27,7 +27,6 @@
         .iframe {
           width: 100%;
           height: 100%;
-          @include boxShadow();
         }
       }
 
@@ -62,7 +61,6 @@
             height: 50px;
             background: #f1f1f1;
             border-radius: 30%;
-            @include boxShadow();
             @include easeOut();
             overflow: hidden;
             position: relative;
@@ -82,6 +80,8 @@
 
             &:hover {
               transform: translateY(-5px);
+              @include boxShadow();
+
               svg {
                 transform: scale(1.3);
                 color: #f1f1f1;
@@ -122,15 +122,16 @@
         align-items: center;
         text-align: center;
         width: 100wv;
-        height: 50px;
         margin: 0;
         background: #111;
+        padding: 20px;
+        font-size: 0.7rem;
 
         a {
-          margin: 5px;
-          text-decoration: none;
-          color: #fff;
-          margin-right: 30px;
+          margin-right: 20px;
+          letter-spacing: 0.2rem;
+          color: set-text-color($primary-color);
+          background: transparent;
         }
       }
     }
