@@ -1,5 +1,10 @@
 // Extra small devices (portrait phones, less than 576px)
 @include media-breakpoint-only(xs) {
+  // Header at bottom
+  #header nav {
+    // bottom: 0;
+  }
+
   // Carousel
   .carousel-container {
     height: 50vh !important;

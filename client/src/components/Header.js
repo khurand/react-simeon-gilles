@@ -2,24 +2,23 @@ import React from "react";
 
 const Header = () => {
   return (
-    <nav className='navbar navbar-dark navbar-expand-lg fixed-top bg-black-transparent shadow header'>
-      <a className='navbar-brand' href='/'>
-        Logo
-      </a>
-      <button
-        className='navbar-toggler'
-        type='button'
-        data-toggle='collapse'
-        data-target='#navbarSupportedContent'
-        aria-controls='navbarSupportedContent'
-        aria-expanded='false'
-        aria-label='Toggle navigation'
-      >
-        <span className='navbar-toggler-icon'></span>
-      </button>
+    <nav className='navbar'>
+      <div className='main'>
+        <a className='navbar-brand' href='/'>
+          Logo
+        </a>
 
-      <div className='collapse navbar-collapse' id='navbarSupportedContent'>
-        <ul className='navbar-nav ml-auto'>
+        <ul className='nav-list'>
+          <li className='nav-icon'>
+            <a className='nav-link' href='#contact'>
+              <i class='far fa-address-card'></i>
+            </a>
+          </li>
+          <li className='nav-icon'>
+            <a className='nav-link' href='#services'>
+              <i class='fas fa-flask'></i>
+            </a>
+          </li>
           <li className='nav-item'>
             <a className='nav-link' href='#contact'>
               Contact
