@@ -4,7 +4,7 @@ import { ListGroup } from "react-bootstrap";
 const ContactInfo = () => {
   return (
     <div className='contact-info'>
-      <ListGroup variant='flush col'>
+      <ListGroup variant='flush'>
         <ListGroup.Item>
           <div className='row infos'>
             <div className='infos-text'>

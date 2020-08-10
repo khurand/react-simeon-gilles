@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import Iframe from "react-iframe";
-import { Button } from "react-bootstrap";
 import MentionsModal from "./MentionsModal";
 
 const Footer = () => {
   const [modalShow, setModalShow] = useState(false);
   return (
-    <div className='footer'>
+    <div className='footer' id='footer'>
       <div className='container-fluid'>
         <div className='row m-sm-0 m-xs-0'>
           <div className='col col-md-6 col-sm-12 col-xs-12 map mb-sm-3'>
@@ -42,17 +41,19 @@ const Footer = () => {
             </div>
           </div>
           <div className='col col-md-12 col-sm-12 col-xs-12 mentions'>
-            <a
-              href='#'
-              className='mentions-link button'
-              onClick={() => setModalShow(true)}
-            >
-              Mentions légales
-            </a>
-            <MentionsModal
-              show={modalShow}
-              onHide={() => setModalShow(false)}
-            />
+            <div className='mentions-container'>
+              <a
+                href='#footer'
+                className='mentions-link'
+                onClick={() => setModalShow(true)}
+              >
+                Mentions légales
+              </a>
+              <MentionsModal
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+              />
+            </div>
 
             <div className='copyright'>Copyright</div>
           </div>

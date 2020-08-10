@@ -1,16 +1,7 @@
 import React from "react";
-import {
-  Card,
-  // Button,
-  // CardImg,
-  // CardTitle,
-  // CardText,
-  CardDeck,
-  // CardSubtitle,
-  // CardBody,
-} from "react-bootstrap";
+import { Card, CardDeck } from "react-bootstrap";
 
-function About() {
+function Services() {
   const card = [
     {
       icon: require("./img/icn/procesador.svg"),
@@ -50,4 +41,4 @@ function About() {
   );
 }
 
-export default About;
+export default Services;

@@ -1,17 +1,22 @@
 // Extra small devices (portrait phones, less than 576px)
 @include media-breakpoint-only(xs) {
-  // Footer
-  .footer .row {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
+  // Carousel
+  .carousel-container {
+    height: 50vh !important;
 
-    .content {
-      margin: 1em 0;
-      display: flex;
-      flex-direction: column;
+    .carousel-caption .content {
+      h1 {
+        font-size: 1.6rem;
+      }
+      p {
+        font-size: 0.9rem;
+      }
     }
+  }
+
+  // Cards
+  .card-container .container {
+    padding: 0px 30px;
   }
 
   // Form
@@ -58,20 +63,51 @@
       }
     }
   }
+
+  // Footer
+  .footer .row {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+
+    .content {
+      margin: 1em 0;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+// Small devices (phones, 577px to 767px)
+@include media-breakpoint-only(sm) {
+  // Carousel
+  .carousel-container {
+    height: 75vh !important;
+
+    .carousel-caption .content {
+      h1 {
+        font-size: 1.6rem;
+      }
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  // Form
+  .contact .checkbox p {
+    padding-right: 10px;
+  }
+  .button {
+    padding-left: 10px;
+  }
 }
 
 // Medium devices (tablets, 768px to 992px)
 @include media-breakpoint-only(md) {
-  .content {
-    display: flex;
-    flex-direction: column;
-  }
 }
 
 // Large devices (desktops, 992px and up)
 @include media-breakpoint-only(lg) {
-  .content {
-    display: flex;
-    flex-direction: column;
-  }
 }

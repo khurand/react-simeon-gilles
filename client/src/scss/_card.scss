@@ -22,7 +22,7 @@
         min-height: 300px;
         @include easeOut();
         background: $primary-color;
-        border: 1px solid $secondary-color;
+        @include border();
         box-shadow: 0 2px 2.4px rgba(0, 0, 0, 0.034),
           0 5.3px 6px rgba(0, 0, 0, 0.041), 0 10.9px 12.2px rgba(0, 0, 0, 0.045),
           0 21.3px 25.2px rgba(0, 0, 0, 0.051), 0 57px 69px rgba(0, 0, 0, 0.08);
