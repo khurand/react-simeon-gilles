@@ -1,5 +1,7 @@
 //contact form
 .contact-container {
+  padding-top: 90px;
+
   .container {
     height: 100%;
     width: 100%;
@@ -12,10 +14,10 @@
     background: $primary-color;
     border-radius: 10px;
     padding: 20px;
-    margin-bottom: 100px;
     @include boxShadow();
     @include border();
 
+    //Côté coordonnées
     .contact-info {
       height: 100%;
       width: 100%;
@@ -56,79 +58,46 @@
       }
     }
 
+    //Côté Formulaire
     .contact {
       border-radius: 5px;
-
-      .error {
-        color: red;
-        font-size: 1rem;
-        text-align: left;
-        width: 100%;
-        margin: 5px 5px 0 0;
-      }
-
-      .inputError {
-        border-left: 3px solid red;
-      }
-
-      .alert {
-        padding-left: 30px;
-
-        .alert-title {
-          margin: 0;
-        }
-      }
-
-      .alert-danger {
-        .alert-title {
-          display: flex;
-          align-items: center;
-          margin: 0;
-
-          h5 {
-            margin: 0;
-          }
-
-          .fa-bug {
-            font-size: 2rem;
-          }
-        }
-      }
-
-      .alert-success {
-        .alert-title {
-          display: flex;
-          align-items: center;
-
-          h5 {
-            margin: 0;
-          }
-
-          .fa-paper-plane {
-            font-size: 2rem;
-          }
-        }
-      }
-
-      .checkbox {
-        display: flex;
-        margin-top: 20px;
-        margin-bottom: 0;
-
-        input {
-          margin: 5px 15px 5px 5px;
-        }
-
-        p {
-          font-size: 0.9rem;
-        }
-      }
+      display: flex;
+      flex-direction: column;
 
       .form-group {
         width: 100%;
 
-        textarea {
+        .input-group {
+          display: flex;
+
+          .input-group-prepend span,
+          .input-group-append span {
+            background-color: $input-color;
+
+            svg {
+              color: $secondary-color;
+            }
+          }
+
+          .input-group-text {
+            color: $secondary-color;
+          }
+
+          .form-control {
+            background-color: $input-color;
+          }
+        }
+
+        .error {
+          color: red;
+          font-size: 1rem;
+          text-align: left;
           width: 100%;
+          margin: 5px 5px 0 0;
+        }
+
+        .inputError {
+          border-left: 2px solid red;
         }
 
         button {
@@ -152,8 +121,52 @@
         }
       }
 
-      .button {
-        margin-top: 20px;
+      .alert-success {
+        padding-left: 30px;
+        .alert-title {
+          display: flex;
+          align-items: center;
+          margin: 0;
+
+          h5 {
+            margin: 0;
+          }
+
+          .fa-paper-plane {
+            font-size: 2rem;
+          }
+        }
+      }
+
+      .checkbox {
+        display: flex;
+        margin-top: 10px;
+        margin-bottom: 0;
+
+        input {
+          margin: 5px 15px 5px 5px;
+        }
+
+        .inputError {
+          outline: 1px solid red;
+        }
+
+        .conditions-text {
+          font-size: 0.9rem;
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          margin-bottom: 15px;
+
+          .error {
+            position: absolute;
+            transform: translate(-25px, 125px);
+          }
+        }
+      }
+
+      .submit-button {
+        margin-top: 40px;
       }
     }
   }

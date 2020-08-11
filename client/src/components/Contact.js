@@ -8,6 +8,7 @@ import {
   Form,
   InputGroup,
   FormControl,
+  FormGroup,
   Alert,
   Spinner,
 } from "react-bootstrap";
@@ -22,7 +23,6 @@ export default class Contact extends Component {
       message: "",
       conditions: false,
       isSent: false,
-      isNotSent: false,
       formErrors: {
         firstNameError: "",
         lastNameError: "",
@@ -97,7 +97,6 @@ export default class Contact extends Component {
           checkedError,
         },
       }));
-      this.setState({ isNotSent: true });
       return false;
     }
     // Si les conditions du formulaire sont valides, le mail est envoyé
@@ -170,172 +169,181 @@ export default class Contact extends Component {
               noValidate
               method='POST'
             >
-              <InputGroup className='mb-2 prenom'>
-                <InputGroup.Append>
-                  <InputGroup.Text className='basic-addon1'>
-                    <i className='fas fa-user'></i>
-                  </InputGroup.Text>
-                </InputGroup.Append>
-                <FormControl
-                  placeholder='Votre prénom'
-                  aria-label='prénom'
-                  aria-describedby='basic-addon1'
-                  type='text'
-                  onChange={this.handleChange}
-                  id='firstName'
-                  name='firstName'
-                  ref={this.prenom}
-                  className={
-                    this.state.formErrors.firstNameError && " inputError"
-                  }
-                />
-                <InputGroup.Append>
-                  <InputGroup.Text className='basic-addon2'>*</InputGroup.Text>
-                </InputGroup.Append>
-              </InputGroup>
-              <InputGroup className='mb-2 nom'>
-                <InputGroup.Append>
-                  <InputGroup.Text className='basic-addon1'>
-                    <i className='fas fa-user'></i>
-                  </InputGroup.Text>
-                </InputGroup.Append>
-                <FormControl
-                  placeholder='Votre nom'
-                  aria-label='Nom'
-                  aria-describedby='basic-addon1'
-                  type='text'
-                  onChange={this.handleChange}
-                  id='firstName'
-                  name='firstName'
-                  ref={this.nom}
-                  className={
-                    this.state.formErrors.lastNameError && " inputError"
-                  }
-                />
-                <InputGroup.Append>
-                  <InputGroup.Text className='basic-addon2'>*</InputGroup.Text>
-                </InputGroup.Append>
-              </InputGroup>
+              {/* Prénom */}
+              <FormGroup className='mb-2 prenom'>
+                <Form.Label>Prénom</Form.Label>
+                <InputGroup className='input-field'>
+                  <InputGroup.Prepend>
+                    <InputGroup.Text className='basic-addon1'>
+                      <i className='fas fa-user'></i>
+                    </InputGroup.Text>
+                  </InputGroup.Prepend>
+                  <FormControl
+                    aria-label='prénom'
+                    aria-describedby='basic-addon1'
+                    type='text'
+                    onChange={this.handleChange}
+                    id='firstName'
+                    name='firstName'
+                    ref={this.prenom}
+                    className={
+                      this.state.formErrors.firstNameError && " inputError"
+                    }
+                  />
+                  <InputGroup.Append>
+                    <InputGroup.Text className='basic-addon2'>
+                      *
+                    </InputGroup.Text>
+                  </InputGroup.Append>
+                </InputGroup>
+                {this.state.formErrors.firstNameError && (
+                  <p className='error'>
+                    {this.state.formErrors.firstNameError}
+                  </p>
+                )}
+              </FormGroup>
 
-              <InputGroup className='mb-2'>
-                <InputGroup.Prepend>
-                  <InputGroup.Text className='basic-addon1'>@</InputGroup.Text>
-                </InputGroup.Prepend>
-                <FormControl
-                  placeholder='Email'
-                  aria-label='Email'
-                  aria-describedby='basic-addon1'
-                  type='email'
-                  onChange={this.handleChange}
-                  id='email'
-                  name='email'
-                  value={this.state.email}
-                  className={this.state.formErrors.emailError && " inputError"}
-                />
-                <InputGroup.Append>
-                  <InputGroup.Text className='basic-addon2'>*</InputGroup.Text>
-                </InputGroup.Append>
-              </InputGroup>
+              {/* Nom */}
+              <FormGroup className='mb-2 nom'>
+                <Form.Label>Nom</Form.Label>
+                <InputGroup className='input-field'>
+                  <InputGroup.Prepend>
+                    <InputGroup.Text className='basic-addon1'>
+                      <i className='fas fa-user'></i>
+                    </InputGroup.Text>
+                  </InputGroup.Prepend>
+                  <FormControl
+                    aria-label='Nom'
+                    aria-describedby='basic-addon1'
+                    type='text'
+                    onChange={this.handleChange}
+                    id='firstName'
+                    name='firstName'
+                    ref={this.nom}
+                    className={
+                      this.state.formErrors.lastNameError && " inputError"
+                    }
+                  />
+                  <InputGroup.Append>
+                    <InputGroup.Text className='basic-addon2'>
+                      *
+                    </InputGroup.Text>
+                  </InputGroup.Append>
+                </InputGroup>
+                {this.state.formErrors.lastNameError && (
+                  <p className='error'>{this.state.formErrors.lastNameError}</p>
+                )}
+              </FormGroup>
 
-              <InputGroup className='mb-2'>
-                <InputGroup.Append>
-                  <InputGroup.Text className='basic-addon1'>
-                    <i class='far fa-envelope'></i>
-                  </InputGroup.Text>
-                </InputGroup.Append>
-                <FormControl
-                  as='textarea'
-                  cols='30'
-                  rows='10'
-                  value={this.state.message}
-                  onChange={this.handleChange}
-                  placeholder='Message'
-                  name='message'
-                  id='message'
-                  className={
-                    this.state.formErrors.messageError && " inputError"
-                  }
-                ></FormControl>
-                <InputGroup.Append>
-                  <InputGroup.Text className='basic-addon1'>*</InputGroup.Text>
-                </InputGroup.Append>
-              </InputGroup>
+              {/* Mail */}
+              <FormGroup className='mb-2 mail'>
+                <Form.Label>Mail</Form.Label>
+                <InputGroup className='input-field'>
+                  <InputGroup.Prepend>
+                    <InputGroup.Text className='basic-addon1'>
+                      @
+                    </InputGroup.Text>
+                  </InputGroup.Prepend>
+                  <FormControl
+                    aria-label='Email'
+                    aria-describedby='basic-addon1'
+                    type='email'
+                    onChange={this.handleChange}
+                    id='email'
+                    name='email'
+                    value={this.state.email}
+                    className={
+                      this.state.formErrors.emailError && " inputError"
+                    }
+                  />
+                  <InputGroup.Append>
+                    <InputGroup.Text className='basic-addon2'>
+                      *
+                    </InputGroup.Text>
+                  </InputGroup.Append>
+                </InputGroup>
+                {this.state.formErrors.emailError && (
+                  <p className='error'>{this.state.formErrors.emailError}</p>
+                )}
+              </FormGroup>
 
-              <InputGroup className='mb-2'></InputGroup>
+              {/* Message */}
+              <FormGroup className='mb-2 message'>
+                <Form.Label>Message</Form.Label>
+                <InputGroup className='input-field'>
+                  <InputGroup.Prepend>
+                    <InputGroup.Text className='basic-addon1'>
+                      <i className='far fa-envelope'></i>
+                    </InputGroup.Text>
+                  </InputGroup.Prepend>
+                  <FormControl
+                    as='textarea'
+                    cols='30'
+                    rows='10'
+                    value={this.state.message}
+                    onChange={this.handleChange}
+                    name='message'
+                    id='message'
+                    className={
+                      this.state.formErrors.messageError && " inputError"
+                    }
+                  ></FormControl>
+                  <InputGroup.Append>
+                    <InputGroup.Text className='basic-addon1'>
+                      *
+                    </InputGroup.Text>
+                  </InputGroup.Append>
+                </InputGroup>
+                {this.state.formErrors.messageError && (
+                  <p className='error'>{this.state.formErrors.messageError}</p>
+                )}
+              </FormGroup>
 
+              {/* Checkbox */}
               <div className='form-group checkbox'>
                 <input
                   type='checkbox'
                   name='conditions'
                   id='conditions'
-                  className='checkbox'
+                  className={
+                    this.state.formErrors.checkedError && " inputError"
+                  }
                   checked={this.state.conditions}
                   onChange={this.handleChange}
                 />
-                <p>
-                  En soumettant ce formulaire, j'accepte que les informations
-                  saisies soient exploitées dans le cadre de la demande de
-                  contact et de la relation commerciale qui peut en découler.
-                </p>
-              </div>
-
-              {/* Message erreur envoi */}
-              {this.state.isNotSent && (
-                <Alert variant='danger' className='alert-danger'>
-                  <Alert.Heading className='alert-title'>
-                    <i class='fas fa-bug mr-3'></i>
-                    <h5>Oups... Quelque-chose ne va pas...</h5>
-                  </Alert.Heading>
-                  <div className='alert-msg mt-3'>
-                    {this.state.formErrors.firstNameError && (
-                      <p className='error'>
-                        {this.state.formErrors.firstNameError}
-                      </p>
-                    )}
-                    {this.state.formErrors.lastNameError && (
-                      <p className='error'>
-                        {this.state.formErrors.lastNameError}
-                      </p>
-                    )}
-                    {this.state.formErrors.emailError && (
-                      <p className='error'>
-                        {this.state.formErrors.emailError}
-                      </p>
-                    )}
-                    {this.state.formErrors.messageError && (
-                      <p className='error'>
-                        {this.state.formErrors.messageError}
-                      </p>
-                    )}
+                <div className='checkbox-text'>
+                  <div className='conditions-text'>
+                    <p>
+                      En soumettant ce formulaire, j'accepte que les
+                      informations saisies soient exploitées dans le cadre de la
+                      demande de contact et de la relation commerciale qui peut
+                      en découler.
+                    </p>
                     {this.state.formErrors.checkedError && (
                       <p className='error'>
                         {this.state.formErrors.checkedError}
                       </p>
                     )}
                   </div>
-                </Alert>
-              )}
+                </div>
+              </div>
 
               {/* Message succes envoi */}
-              {this.state.isSent && (
-                <Alert variant='success' className='alert-success'>
-                  <Alert.Heading className='alert-title'>
-                    <i className='far fa-paper-plane mr-3'></i>
-                    <h5>Votre message a bien été envoyé !</h5>
-                  </Alert.Heading>
-                </Alert>
-              )}
+              {this.state.isSent &&
+                ({
+                  /* <Spinner animation="border" variant="primary" /> */
+                },
+                (
+                  <Alert variant='success'>
+                    <Alert.Heading className='alert-title'>
+                      <i className='far fa-paper-plane mr-3'></i>
+                      <h5>Votre message a bien été envoyé !</h5>
+                    </Alert.Heading>
+                  </Alert>
+                ))}
 
-              <div className='form-group button'>
-                <Button
-                  type='submit'
-                  size='md'
-                  className='btn'
-                  onClick={() => {
-                    this.setState({ toggleAlert: true });
-                  }}
-                >
-                  {/* <Spinner animation="border" variant="primary" /> */}
+              <div className='form-group submit-button'>
+                <Button type='submit' size='md' className='btn'>
                   Envoyer
                 </Button>
               </div>

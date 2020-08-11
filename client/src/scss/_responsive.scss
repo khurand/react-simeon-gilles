@@ -1,91 +1,188 @@
 // Extra small devices (portrait phones, less than 576px)
 @include media-breakpoint-only(xs) {
-  // Header at bottom
-  #header nav {
-    // bottom: 0;
-  }
+  //App
+  .app {
+    padding-bottom: 90px;
 
-  // Carousel
-  .carousel-container {
-    height: 50vh !important;
+    // Header at bottom
+    #header {
+      width: 100vw;
+      height: 80px;
+      @include border();
+      position: fixed;
+      z-index: 10;
+      bottom: 0;
+      opacity: 1;
+      background: $primary-color;
 
-    .carousel-caption .content {
-      h1 {
-        font-size: 1.6rem;
-      }
-      p {
-        font-size: 0.9rem;
-      }
-    }
-  }
-
-  // Cards
-  .card-container .container {
-    padding: 0px 30px;
-  }
-
-  // Form
-  .contact-container {
-    padding: 10px;
-    .row {
-      display: flex;
-      flex-direction: column;
-
-      .contact-info {
+      .navbar {
+        height: 100%;
         width: 100%;
-
-        hr {
-          margin: 3rem 0 1rem 0;
-        }
-
-        .list-group {
-          margin-bottom: 30px;
-        }
-      }
-
-      .alert-title {
-        svg {
-          font-size: 1.6rem !important;
-        }
-
-        h5 {
-          font-size: 1rem !important;
-        }
-      }
-
-      .alert-msg p {
-        font-size: 0.8rem !important;
-      }
-
-      .button {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-
-        .btn {
+        .main {
+          display: flex;
+          justify-content: space-between;
           width: 100%;
+          height: 100%;
+
+          .nav-brand {
+            // color: set-text-color($primary-color);
+            // display: flex;
+            // align-items: center;
+            // margin: 0 !important;
+            // font-size: 1.2rem !important;
+            display: none !important;
+          }
+
+          .nav-list {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            width: 100% !important;
+            margin-bottom: 0;
+
+            .nav-icon {
+              display: flex !important;
+              justify-content: center;
+              align-items: center;
+              font-size: 1.2rem;
+              border: rgba(100, 255, 218, 0.7) 1px solid;
+              height: 100%;
+              margin: 0px 2px;
+
+              .nav-link {
+                text-decoration: none;
+                color: $secondary-color;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+
+                &-text {
+                  font-size: 0.9rem;
+                  margin-bottom: 0;
+                }
+              }
+            }
+
+            .nav-item {
+              counter-increment: item 1;
+              display: none;
+
+              .nav-link {
+                display: inline-block;
+                position: relative;
+                cursor: pointer;
+                text-decoration: none;
+                padding: 12px 10px;
+                white-space: nowrap;
+                font-size: 1rem;
+
+                &:before {
+                  content: "0" counter(item) ".";
+                  text-align: right;
+                  color: $secondary-color;
+                  font-size: 0.9rem;
+                  transition: 0.7s ease;
+                }
+              }
+            }
+          }
         }
       }
     }
-  }
 
-  // Footer
-  .footer .row {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
+    // Carousel
+    .carousel-container {
+      height: 50vh !important;
 
-    .content {
-      margin: 1em 0;
+      .carousel-caption .content {
+        h1 {
+          font-size: 1.6rem;
+        }
+        p {
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    // Cards
+    .card-container .container {
+      padding: 0px 30px;
+    }
+
+    // Form
+    .contact-container {
+      padding: 10px;
+      .row {
+        display: flex;
+        flex-direction: column;
+
+        .contact-info {
+          width: 100%;
+
+          hr {
+            margin: 3rem 0 1rem 0;
+          }
+
+          .list-group {
+            margin-bottom: 30px;
+          }
+        }
+
+        .alert-title {
+          svg {
+            font-size: 1.6rem !important;
+          }
+
+          h5 {
+            font-size: 1rem !important;
+          }
+        }
+
+        .alert-msg p {
+          font-size: 0.8rem !important;
+        }
+
+        .submit-button {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+
+          .btn {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    // Footer
+    .footer .row {
+      padding: 0;
+      margin: 0;
       display: flex;
       flex-direction: column;
+
+      .content {
+        margin: 1em 0;
+        display: flex;
+        flex-direction: column;
+      }
     }
   }
 }
 
 // Small devices (phones, 577px to 767px)
 @include media-breakpoint-only(sm) {
+  //Header
+  #header {
+    .nav-list {
+      width: 80% !important;
+      .nav-link {
+        font-size: 1rem !important;
+      }
+    }
+  }
+
   // Carousel
   .carousel-container {
     height: 75vh !important;
@@ -111,8 +208,41 @@
 
 // Medium devices (tablets, 768px to 992px)
 @include media-breakpoint-only(md) {
+  //Header
+  #header {
+    .nav-list {
+      width: 70% !important;
+      .nav-link {
+        font-size: 1.1rem !important;
+      }
+    }
+  }
 }
 
 // Large devices (desktops, 992px and up)
 @include media-breakpoint-only(lg) {
+  //Header
+  #header {
+    .nav-list {
+      width: 60% !important;
+      .nav-link {
+        font-size: 1.2rem !important;
+      }
+    }
+  }
+
+  .checkbox {
+    .conditions-text {
+      font-size: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      margin-bottom: 15px;
+
+      .error {
+        position: absolute;
+        transform: translate(-25px, 110px) !important;
+      }
+    }
+  }
 }

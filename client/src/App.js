@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./components/Header";
 import CarouselSlider from "./components/CarouselSlider";
 import Services from "./components/Services";
+import About from "./components/About";
 import ParallaxSection from "./components/ParallaxSection";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -17,15 +18,15 @@ function App() {
           <div className='carousel-container'>
             <CarouselSlider />
           </div>
-          <hr />
           <div className='card-container' id='services'>
             <Services />
           </div>
-          <hr />
+          <div className='about-container' id='about'>
+            <About />
+          </div>
           <div className='parallax-container'>
             <ParallaxSection />
           </div>
-          <hr />
           <div className='contact-container' id='contact'>
             <Contact />
           </div>

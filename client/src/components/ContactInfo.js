@@ -42,7 +42,7 @@ const ContactInfo = () => {
           <div className='row infos'>
             <div className='infos-text'>
               <h5>
-                <i class='fas fa-briefcase mr-2'></i>
+                <i className='fas fa-briefcase mr-2'></i>
                 SIREN
               </h5>
               <p>012345</p>

@@ -1,74 +1,148 @@
+// Header on top
 #header {
   width: 100vw;
-  height: 100px;
-  @include border();
+  height: 80px;
   position: fixed;
-  z-index: 10;
-  bottom: 0;
+  z-index: 1000;
   background: $primary-color;
-  opacity: 0.95;
+  opacity: 0.7;
 
   .navbar {
     height: 100%;
     width: 100%;
+
     .main {
       display: flex;
       width: 100%;
       height: 100%;
 
-      .navbar-brand {
-        color: set-text-color($primary-color);
+      .nav-brand {
         margin-right: auto;
         display: flex;
+        justify-content: center;
         align-items: center;
+        font-size: 2rem;
+        color: set-text-color($primary-color);
+        text-decoration: none;
       }
 
       .nav-list {
         display: flex;
-        align-items: center;
         list-style: none;
-        width: 50%;
+        align-items: center;
+        justify-content: space-evenly;
         margin-bottom: 0;
+        width: 60%;
 
         .nav-icon {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          font-size: 2rem;
-          flex-grow: 1;
-          border: rgba(100, 255, 218, 0.7) 1px solid;
-          height: 100%;
-          margin: 0px 2px;
-
-          .nav-link {
-            text-decoration: none;
-            color: $secondary-color;
-          }
+          display: none;
         }
 
         .nav-item {
           counter-increment: item 1;
-          display: none;
+          @include easeOut();
+          padding: 5px;
 
+          &:hover,
+          &:focus,
+          &:active {
+            .nav-link {
+              color: $third-color;
+            }
+            &:before {
+              border-left: $secondary-color 1px solid;
+            }
+          }
           .nav-link {
+            color: set-text-color($primary-color);
+            font-size: 1.2rem;
             display: inline-block;
             position: relative;
             cursor: pointer;
-            text-decoration: none;
-            padding: 12px 10px;
-            white-space: nowrap;
-            font-size: 1rem;
+          }
 
-            &:before {
-              content: "0" counter(item) ".";
-              text-align: right;
-              color: $secondary-color;
-              font-size: 0.9rem;
-              transition: 0.7s ease;
-            }
+          &:before {
+            content: "0" counter(item) ".";
+            text-align: right;
+            color: $secondary-color;
+            font-size: 0.9rem;
+            padding-left: 5px;
           }
         }
       }
     }
   }
 }
+
+// width: 100vw;
+// height: 100px;
+// @include border();
+// position: fixed;
+// z-index: 10;
+// bottom: 0;
+// background: $primary-color;
+// opacity: 0.95;
+
+// .navbar {
+//   height: 100%;
+//   width: 100%;
+//   .main {
+//     display: flex;
+//     width: 100%;
+//     height: 100%;
+
+//     .navbar-brand {
+//       color: set-text-color($primary-color);
+//       margin-right: auto;
+//       display: flex;
+//       align-items: center;
+//     }
+
+//     .nav-list {
+//       display: flex;
+//       align-items: center;
+//       list-style: none;
+//       width: 50%;
+//       margin-bottom: 0;
+
+//       .nav-icon {
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         font-size: 2rem;
+//         flex-grow: 1;
+//         border: rgba(100, 255, 218, 0.7) 1px solid;
+//         height: 100%;
+//         margin: 0px 2px;
+
+//         .nav-link {
+//           text-decoration: none;
+//           color: $secondary-color;
+//         }
+//       }
+
+//       .nav-item {
+//         counter-increment: item 1;
+//         display: none;
+
+//         .nav-link {
+//           display: inline-block;
+//           position: relative;
+//           cursor: pointer;
+//           text-decoration: none;
+//           padding: 12px 10px;
+//           white-space: nowrap;
+//           font-size: 1rem;
+
+//           &:before {
+//             content: "0" counter(item) ".";
+//             text-align: right;
+//             color: $secondary-color;
+//             font-size: 0.9rem;
+//             transition: 0.7s ease;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
