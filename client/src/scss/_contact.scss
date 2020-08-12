@@ -5,17 +5,19 @@
   .container {
     height: 100%;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
     background: $primary-color;
     border-radius: 10px;
     padding: 20px;
     @include boxShadow();
     @include border();
+
+    .row {
+      width: 100%;
+      margin: 0;
+    }
 
     //Côté coordonnées
     .contact-info {
@@ -41,17 +43,24 @@
 
           .infos {
             padding-left: 10px;
+
             &-text {
               display: flex;
               flex-direction: column;
+              width: 100%;
 
-              h5 svg {
+              h5 {
+                width: 100%;
+                text-align: center;
+              }
+
+              svg {
                 color: $secondary-color;
               }
 
-              p {
-                margin-left: 20px;
-              }
+              // p {
+              //   margin-left: -20px;
+              // }
             }
           }
         }
@@ -95,6 +104,10 @@
           text-align: left;
           width: 100%;
           margin: 5px 5px 0 0;
+        }
+
+        .conditions-text .error {
+          margin-left: -30px;
         }
 
         .inputError {

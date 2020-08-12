@@ -118,7 +118,7 @@
         float: none;
         shape-outside: none;
         margin: auto;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
       }
       .bio {
         display: block;
@@ -183,16 +183,18 @@
     }
 
     // Footer
-    .footer .row {
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-
-      .content {
-        margin: 1em 0;
+    #footer {
+      .container-fluid .row {
+        padding: 0;
+        margin: 0;
         display: flex;
         flex-direction: column;
+
+        .footer-content {
+          margin: 1em 0;
+          display: flex;
+          flex-direction: column;
+        }
       }
     }
   }
@@ -211,7 +213,7 @@
   }
 
   // Carousel
-  .carousel-container {
+  #carousel {
     height: 75vh !important;
 
     .carousel-caption .content {
@@ -225,9 +227,11 @@
   }
 
   // About
-  .about-container {
+  #about {
     padding-top: 90px;
     .container {
+      padding: 0px 75px !important;
+
       .portrait {
         width: 250px !important;
         height: 250px !important;
@@ -258,17 +262,36 @@
   }
 
   // About
-  .portrait {
-    width: 250px !important;
-    height: 250px !important;
-    background: url("../components/img/bat-portrait-2-min.jpg") no-repeat !important;
+  #about {
+    .container {
+      padding: 0px 100px !important;
+
+      .portrait {
+        width: 250px !important;
+        height: 250px !important;
+        background: url("../components/img/bat-portrait-2-min.jpg") no-repeat !important;
+      }
+    }
+  }
+
+  // Form
+  #contact {
+    padding-left: 40px;
+    padding-right: 40px;
+    .container {
+      max-width: 100% !important;
+    }
   }
 
   // Footer
-  .footer-links {
-    width: 50% !important;
+  .footer-content {
+    width: 60%;
     display: flex;
     flex-direction: column;
+
+    .footer-links {
+      width: 50% !important;
+    }
   }
 }
 
@@ -296,14 +319,14 @@
       margin-bottom: 15px;
     }
   }
+
+  // Footer
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 // Large devices (desktops, more than 1200px)
 @include media-breakpoint-only(xl) {
-  .app {
-    font-size: 1.4rem !important;
-    p {
-      font-size: 1.4rem;
-    }
-  }
 }

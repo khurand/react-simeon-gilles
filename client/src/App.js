@@ -13,7 +13,7 @@ function App() {
       <div className='navbar-container' id='header'>
         <Header />
       </div>
-      <div className='container-fluid'>
+      <div className='container-fluid' id='main-content'>
         <div className='main'>
           <div className='carousel-container' id='carousel'>
             <CarouselSlider />
