@@ -164,7 +164,7 @@ export default class Contact extends Component {
           </Col>
           <Col className='col-md-8 col-sm-12'>
             <Form
-              className='contact mb-3'
+              className='contact-form mb-3'
               onSubmit={this.handleSubmit}
               noValidate
               method='POST'

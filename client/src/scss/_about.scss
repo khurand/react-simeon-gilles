@@ -1,7 +1,21 @@
 .about-container {
   padding-top: 90px;
   .container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0px 40px;
+    height: 100%;
+    .portrait {
+      width: 400px;
+      height: 400px;
+      background: url("../components/img/bat-portrait-2.jpg") no-repeat;
+      border-radius: 50%;
+      float: left;
+      shape-outside: circle();
+      margin: 90px 40px 60px 0;
+    }
     .bio {
+      width: 100%;
       .bio-text {
         text-align: justify;
       }

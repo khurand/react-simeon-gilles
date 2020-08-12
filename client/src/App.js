@@ -15,7 +15,7 @@ function App() {
       </div>
       <div className='container-fluid'>
         <div className='main'>
-          <div className='carousel-container'>
+          <div className='carousel-container' id='carousel'>
             <CarouselSlider />
           </div>
           <div className='card-container' id='services'>
@@ -24,7 +24,7 @@ function App() {
           <div className='about-container' id='about'>
             <About />
           </div>
-          <div className='parallax-container'>
+          <div className='parallax-container' id='parallax'>
             <ParallaxSection />
           </div>
           <div className='contact-container' id='contact'>
@@ -32,7 +32,7 @@ function App() {
           </div>
         </div>
       </div>
-      <div className='footer-container'>
+      <div className='footer-container' id='footer'>
         <Footer />
       </div>
     </div>

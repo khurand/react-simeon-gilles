@@ -23,7 +23,7 @@ function Services() {
     },
   ];
   return (
-    <CardDeck className='container'>
+    <CardDeck>
       <div className='row'>
         {card.map((item, idx) => {
           return (

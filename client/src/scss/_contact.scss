@@ -59,7 +59,7 @@
     }
 
     //Côté Formulaire
-    .contact {
+    .contact-form {
       border-radius: 5px;
       display: flex;
       flex-direction: column;
@@ -84,7 +84,8 @@
           }
 
           .form-control {
-            background-color: $input-color;
+            background: $input-color;
+            color: set-text-color($input-color);
           }
         }
 
@@ -157,16 +158,11 @@
           flex-direction: column;
           position: relative;
           margin-bottom: 15px;
-
-          .error {
-            position: absolute;
-            transform: translate(-25px, 125px);
-          }
         }
       }
 
       .submit-button {
-        margin-top: 40px;
+        margin-top: 20px;
       }
     }
   }

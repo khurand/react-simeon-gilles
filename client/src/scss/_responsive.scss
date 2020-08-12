@@ -25,17 +25,13 @@
           height: 100%;
 
           .nav-brand {
-            // color: set-text-color($primary-color);
-            // display: flex;
-            // align-items: center;
-            // margin: 0 !important;
-            // font-size: 1.2rem !important;
             display: none !important;
           }
 
           .nav-list {
             display: flex;
             align-items: center;
+            justify-content: space-between;
             list-style: none;
             width: 100% !important;
             margin-bottom: 0;
@@ -48,6 +44,7 @@
               border: rgba(100, 255, 218, 0.7) 1px solid;
               height: 100%;
               margin: 0px 2px;
+              width: 100%;
 
               .nav-link {
                 text-decoration: none;
@@ -92,7 +89,7 @@
     }
 
     // Carousel
-    .carousel-container {
+    #carousel {
       height: 50vh !important;
 
       .carousel-caption .content {
@@ -106,13 +103,41 @@
     }
 
     // Cards
-    .card-container .container {
-      padding: 0px 30px;
+    #services .card-deck {
+      padding: 10px 30px;
+    }
+
+    // About
+    #about .container {
+      padding: 10px 30px;
+      .portrait {
+        width: 250px;
+        height: 250px;
+        background: url("../components/img/bat-portrait-2-min.jpg") no-repeat;
+        border-radius: 1rem;
+        float: none;
+        shape-outside: none;
+        margin: auto;
+        margin-bottom: 20px;
+      }
+      .bio {
+        display: block;
+        width: 100%;
+        .bio-text {
+          text-align: justify;
+        }
+      }
     }
 
     // Form
-    .contact-container {
-      padding: 10px;
+    #contact .container {
+      padding: 10px 30px;
+      border-top: none;
+      border-right: none;
+      border-left: none;
+      box-shadow: none;
+      border-radius: 0;
+
       .row {
         display: flex;
         flex-direction: column;
@@ -129,27 +154,29 @@
           }
         }
 
-        .alert-title {
-          svg {
-            font-size: 1.6rem !important;
+        .contact-form {
+          .alert-title {
+            svg {
+              font-size: 1.6rem !important;
+            }
+
+            h5 {
+              font-size: 1rem !important;
+            }
           }
 
-          h5 {
-            font-size: 1rem !important;
+          .alert-msg p {
+            font-size: 0.8rem !important;
           }
-        }
 
-        .alert-msg p {
-          font-size: 0.8rem !important;
-        }
-
-        .submit-button {
-          display: flex;
-          justify-content: center;
-          width: 100%;
-
-          .btn {
+          .submit-button {
+            display: flex;
+            justify-content: center;
             width: 100%;
+
+            .btn {
+              width: 100%;
+            }
           }
         }
       }
@@ -171,7 +198,7 @@
   }
 }
 
-// Small devices (phones, 577px to 767px)
+// Small devices (landscape phones, small tablets, 577px to 767px)
 @include media-breakpoint-only(sm) {
   //Header
   #header {
@@ -197,6 +224,18 @@
     }
   }
 
+  // About
+  .about-container {
+    padding-top: 90px;
+    .container {
+      .portrait {
+        width: 250px !important;
+        height: 250px !important;
+        background: url("../components/img/bat-portrait-2-min.jpg") no-repeat !important;
+      }
+    }
+  }
+
   // Form
   .contact .checkbox p {
     padding-right: 10px;
@@ -217,6 +256,20 @@
       }
     }
   }
+
+  // About
+  .portrait {
+    width: 250px !important;
+    height: 250px !important;
+    background: url("../components/img/bat-portrait-2-min.jpg") no-repeat !important;
+  }
+
+  // Footer
+  .footer-links {
+    width: 50% !important;
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 // Large devices (desktops, 992px and up)
@@ -231,6 +284,9 @@
     }
   }
 
+  // About
+
+  // Form
   .checkbox {
     .conditions-text {
       font-size: 0.9rem;
@@ -238,11 +294,16 @@
       flex-direction: column;
       position: relative;
       margin-bottom: 15px;
+    }
+  }
+}
 
-      .error {
-        position: absolute;
-        transform: translate(-25px, 110px) !important;
-      }
+// Large devices (desktops, more than 1200px)
+@include media-breakpoint-only(xl) {
+  .app {
+    font-size: 1.4rem !important;
+    p {
+      font-size: 1.4rem;
     }
   }
 }
