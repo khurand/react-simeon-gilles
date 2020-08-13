@@ -4,6 +4,10 @@
   .app {
     padding-bottom: 90px;
 
+    .b2t {
+      display: none;
+    }
+
     // Header at bottom
     #header {
       width: 100vw;
@@ -75,7 +79,7 @@
                 font-size: 1rem;
 
                 &:before {
-                  content: "0" counter(item) ".";
+                  content: '0' counter(item) '.';
                   text-align: right;
                   color: $secondary-color;
                   font-size: 0.9rem;
@@ -113,7 +117,7 @@
       .portrait {
         width: 250px;
         height: 250px;
-        background: url("../components/img/bat-portrait-2-min.jpg") no-repeat;
+        background: url('../components/img/bat-portrait-2-min.jpg') no-repeat;
         border-radius: 1rem;
         float: none;
         shape-outside: none;
@@ -235,7 +239,7 @@
       .portrait {
         width: 250px !important;
         height: 250px !important;
-        background: url("../components/img/bat-portrait-2-min.jpg") no-repeat !important;
+        background: url('../components/img/bat-portrait-2-min.jpg') no-repeat !important;
       }
     }
   }
@@ -269,7 +273,7 @@
       .portrait {
         width: 250px !important;
         height: 250px !important;
-        background: url("../components/img/bat-portrait-2-min.jpg") no-repeat !important;
+        background: url('../components/img/bat-portrait-2-min.jpg') no-repeat !important;
       }
     }
   }
