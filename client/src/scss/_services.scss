@@ -33,8 +33,10 @@
         }
 
         .card-img-top {
-          height: 100px;
-          width: 100px;
+          height: 125px;
+          width: 125px;
+          background: #eee;
+          padding: 5px;
         }
         .card-body {
           padding-bottom: 0;
@@ -44,6 +46,10 @@
           align-items: center;
           text-align: center;
           color: set-text-color($primary-color);
+
+          .card-title {
+            font-size: 1.4rem;
+          }
 
           .card-text {
             font-size: 1rem;

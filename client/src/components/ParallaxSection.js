@@ -9,9 +9,9 @@ const ParallaxSection = () => {
       bgImageAlt='parallax banner'
       blur={{ min: -15, max: 15 }}
     >
-      <h2 className='parallax-banner-text'>
+      {/* <h2 className='parallax-banner-text'>
         Ici se trouve le parallax qui déchire
-      </h2>
+      </h2> */}
     </Parallax>
   );
 };
