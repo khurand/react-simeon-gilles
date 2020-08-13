@@ -30,7 +30,9 @@ function Services() {
             <Card key={idx} className='col-sm-12 col-md-3 mb-lg-0'>
               <Card.Img variant='top' src={item.icon} />
               <Card.Body>
-                <Card.Title>{item.titre}</Card.Title>
+                <Card.Title>
+                  <h5>{item.titre}</h5>
+                </Card.Title>
                 <Card.Text>{item.text}</Card.Text>
               </Card.Body>
             </Card>

@@ -36,6 +36,7 @@
           height: 125px;
           width: 125px;
           background: #eee;
+          border-radius: inherit;
           padding: 5px;
         }
         .card-body {
@@ -47,7 +48,7 @@
           text-align: center;
           color: set-text-color($primary-color);
 
-          .card-title {
+          .card-title h5 {
             font-size: 1.4rem;
           }
 

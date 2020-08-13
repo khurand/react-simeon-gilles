@@ -3,7 +3,7 @@
 // Colors
 $primary-color: #0a192f;
 $secondary-color: #64ffda;
-$third-color: #eee;
+$third-color: #c0c3cc;
 $input-color: #10284a;
 
 // Mixins
@@ -24,8 +24,8 @@ $input-color: #10284a;
 // Set Text Color
 @function set-text-color($color) {
   @if (lightness($color) >40) {
-    @return #0a192f;
+    @return $primary-color;
   } @else {
-    @return #64ffda;
+    @return $third-color;
   }
 }

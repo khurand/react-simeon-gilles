@@ -6,6 +6,7 @@ import About from "./components/About";
 import ParallaxSection from "./components/ParallaxSection";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import { BackToTop } from "react-jump";
 
 function App() {
   return (
@@ -31,6 +32,11 @@ function App() {
             <Contact />
           </div>
         </div>
+        <BackToTop options={{ offset: 50 }} className='b2t' showHeight={400}>
+          <a href='#header'>
+            <i className='fas fa-rocket'></i>
+          </a>
+        </BackToTop>
       </div>
       <div className='footer-container' id='footer'>
         <Footer />

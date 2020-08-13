@@ -10,13 +10,15 @@
     "bootstrap": "^4.5.0",
     "http-proxy-middleware": "^1.0.5",
     "jquery": "^3.5.1",
+    "jump.js": "^1.0.2",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
     "react-bootstrap": "^1.2.2",
+    "react-dom": "^16.13.1",
     "react-iframe": "^1.8.0",
-    "react-parallax": "^3.0.3"
+    "react-jump": "0.0.9",
+    "react-parallax": "^3.0.3",
+    "react-scripts": "^3.4.3"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,4 +1,5 @@
 import React from "react";
+import { Jump } from "react-jump";
 
 const Header = () => {
   return (
@@ -27,20 +28,30 @@ const Header = () => {
               <p className='nav-link-text'>Bio</p>
             </a>
           </li>
+
           <li className='nav-item'>
-            <a className='nav-link' href='#contact'>
-              Contact
-            </a>
+            <div className='winker'></div>
+            <Jump target={"#contact"} options={{ duration: 2000 }}>
+              <a className='nav-link' href='#'>
+                Contact
+              </a>
+            </Jump>
           </li>
           <li className='nav-item'>
-            <a className='nav-link' href='#services'>
-              Services
-            </a>
+            <div className='winker'></div>
+            <Jump target={"#services"} options={{ offset: -200 }}>
+              <a className='nav-link' href='#'>
+                Services
+              </a>
+            </Jump>
           </li>
           <li className='nav-item'>
-            <a className='nav-link' href='#about'>
-              Qui suis-je ?
-            </a>
+            <div className='winker'></div>
+            <Jump target={"#about"}>
+              <a className='nav-link' href='#'>
+                Qui suis-je ?
+              </a>
+            </Jump>
           </li>
         </ul>
       </div>

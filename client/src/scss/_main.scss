@@ -9,6 +9,26 @@
   background: $primary-color;
   color: set-text-color($primary-color);
   font-size: 1rem;
+
+  .b2t {
+    right: 50px;
+
+    a {
+      padding: 20px;
+
+      svg {
+        @include easeOut();
+        color: $secondary-color;
+        font-size: 2rem;
+      }
+    }
+
+    &:hover {
+      a svg {
+        transform: rotate(-45deg);
+      }
+    }
+  }
 }
 
 h1,
@@ -19,6 +39,18 @@ h5,
 p,
 a {
   font-family: "Consolas", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: $secondary-color;
+}
+
+p {
+  color: $third-color;
 }
 
 .container-fluid {
