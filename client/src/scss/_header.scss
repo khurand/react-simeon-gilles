@@ -6,86 +6,82 @@
   z-index: 1000;
   background: $primary-color;
   opacity: 0.7;
+  visibility: hidden;
 
   .navbar {
+    display: flex;
     height: 100%;
     width: 100%;
 
-    .main {
+    .nav-brand {
+      margin-right: auto;
       display: flex;
-      width: 100%;
-      height: 100%;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      color: $secondary-color;
+      text-decoration: none;
+    }
 
-      .nav-brand {
-        margin-right: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 2rem;
-        color: $secondary-color;
-        text-decoration: none;
+    .nav-list {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      justify-content: space-evenly;
+      margin-bottom: 0;
+      width: 60%;
+
+      .nav-icon {
+        display: none;
       }
 
-      .nav-list {
+      .nav-item {
+        padding: 5px;
         display: flex;
-        list-style: none;
-        align-items: center;
-        justify-content: space-evenly;
-        margin-bottom: 0;
-        width: 60%;
+        counter-increment: item 1;
 
-        .nav-icon {
-          display: none;
+        .winker {
+          width: 10px;
+          height: 20px;
+          transform: translate(15px, 10px);
         }
 
-        .nav-item {
-          padding: 5px;
-          display: flex;
-          counter-increment: item 1;
+        .nav-link {
+          @include easeOut();
+          color: set-text-color($primary-color);
+          font-size: 1.2rem;
+          display: inline-block;
+          position: relative;
+          cursor: pointer;
+
+          &:before {
+            content: "0" counter(item) ".";
+            text-align: right;
+            color: $secondary-color;
+            font-size: 0.9rem;
+            padding-left: 5px;
+            margin-right: 10px;
+          }
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+          .nav-link {
+            color: $secondary-color;
+          }
 
           .winker {
-            width: 10px;
-            height: 20px;
-            transform: translate(15px, 10px);
+            background-color: $secondary-color;
+            animation: wink 0.5s linear infinite alternate;
           }
 
-          .nav-link {
-            @include easeOut();
-            color: set-text-color($primary-color);
-            font-size: 1.2rem;
-            display: inline-block;
-            position: relative;
-            cursor: pointer;
-
-            &:before {
-              content: "0" counter(item) ".";
-              text-align: right;
-              color: $secondary-color;
-              font-size: 0.9rem;
-              padding-left: 5px;
-              margin-right: 10px;
+          @keyframes wink {
+            0% {
+              opacity: 0;
             }
-          }
-
-          &:hover,
-          &:focus,
-          &:active {
-            .nav-link {
-              color: $secondary-color;
-            }
-
-            .winker {
-              background-color: $secondary-color;
-              animation: wink 0.5s linear infinite alternate;
-            }
-
-            @keyframes wink {
-              0% {
-                opacity: 0;
-              }
-              100% {
-                opacity: 1;
-              }
+            100% {
+              opacity: 1;
             }
           }
         }

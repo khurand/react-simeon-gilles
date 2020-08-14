@@ -4,15 +4,17 @@ import image from "./img/img6-banner.jpg";
 
 const ParallaxSection = () => {
   return (
-    <Parallax
-      bgImage={image}
-      bgImageAlt='parallax banner'
-      blur={{ min: -15, max: 15 }}
-    >
-      {/* <h2 className='parallax-banner-text'>
+    <div className='parallax-container' id='parallax'>
+      <Parallax
+        bgImage={image}
+        bgImageAlt='parallax banner'
+        blur={{ min: -15, max: 15 }}
+      >
+        {/* <h2 className='parallax-banner-text'>
         Ici se trouve le parallax qui déchire
       </h2> */}
-    </Parallax>
+      </Parallax>
+    </div>
   );
 };
 
