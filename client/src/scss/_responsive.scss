@@ -4,6 +4,10 @@
   .app {
     padding-bottom: 90px;
 
+    .b2t {
+      display: none;
+    }
+
     // Header at bottom
     #header {
       width: 100vw;
@@ -58,6 +62,7 @@
             }
           }
 
+<<<<<<< HEAD
           .nav-item {
             counter-increment: item 1;
             display: none;
@@ -77,6 +82,28 @@
                 color: $secondary-color;
                 font-size: 0.9rem;
                 transition: 0.7s ease;
+=======
+            .nav-item {
+              counter-increment: item 1;
+              display: none;
+
+              .nav-link {
+                display: inline-block;
+                position: relative;
+                cursor: pointer;
+                text-decoration: none;
+                padding: 12px 10px;
+                white-space: nowrap;
+                font-size: 1rem;
+
+                &:before {
+                  content: '0' counter(item) '.';
+                  text-align: right;
+                  color: $secondary-color;
+                  font-size: 0.9rem;
+                  transition: 0.7s ease;
+                }
+>>>>>>> dc93da5ff65562fd5b4d8143c55de14ecce8ccc4
               }
             }
           }
@@ -109,7 +136,7 @@
       .portrait {
         width: 250px;
         height: 250px;
-        background: url("../components/img/bat-portrait-2-min.jpg") no-repeat;
+        background: url('../components/img/bat-portrait-2-min.jpg') no-repeat;
         border-radius: 1rem;
         float: none;
         shape-outside: none;
@@ -231,7 +258,7 @@
       .portrait {
         width: 250px !important;
         height: 250px !important;
-        background: url("../components/img/bat-portrait-2-min.jpg") no-repeat !important;
+        background: url('../components/img/bat-portrait-2-min.jpg') no-repeat !important;
       }
     }
   }
@@ -265,7 +292,7 @@
       .portrait {
         width: 250px !important;
         height: 250px !important;
-        background: url("../components/img/bat-portrait-2-min.jpg") no-repeat !important;
+        background: url('../components/img/bat-portrait-2-min.jpg') no-repeat !important;
       }
     }
   }
