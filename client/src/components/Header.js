@@ -3,13 +3,13 @@ import { TweenMax, Power3 } from "gsap";
 import { Jump } from "react-jump";
 
 const Header = () => {
-  let headerItem = useRef(null);
-  let LinkItem1 = useRef(null);
-  let LinkItem2 = useRef(null);
-  let LinkItem3 = useRef(null);
-  let LinkIcon1 = useRef(null);
-  let LinkIcon2 = useRef(null);
-  let LinkIcon3 = useRef(null);
+  let headerItem = useRef(null),
+    LinkItem1 = useRef(null),
+    LinkItem2 = useRef(null),
+    LinkItem3 = useRef(null),
+    LinkIcon1 = useRef(null),
+    LinkIcon2 = useRef(null),
+    LinkIcon3 = useRef(null);
 
   useEffect(() => {
     TweenMax.from(headerItem, 1, {
