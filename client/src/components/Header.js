@@ -1,11 +1,6 @@
-<<<<<<< HEAD
 import React, { useRef, useEffect } from "react";
 import { TweenMax, Power3 } from "gsap";
 import { Jump } from "react-jump";
-=======
-import React from 'react';
-import { Jump } from 'react-jump';
->>>>>>> dc93da5ff65562fd5b4d8143c55de14ecce8ccc4
 
 const Header = () => {
   let headerItem = useRef(null);
@@ -35,7 +30,6 @@ const Header = () => {
   }, []);
 
   return (
-<<<<<<< HEAD
     <nav
       className='navbar-container'
       id='header'
@@ -92,52 +86,10 @@ const Header = () => {
             <div className='winker'></div>
             <Jump target={"#contact"} options={{ duration: 2000 }}>
               <a className='nav-link' href='# '>
-=======
-    <nav className="navbar">
-      <div className="main">
-        <a className="nav-brand" href="/">
-          Logo
-        </a>
-
-        <ul className="nav-list">
-          <li className="nav-icon">
-            <Jump
-              target={'.contact-form'}
-              options={{ duration: 2000, offset: -25 }}
-            >
-              <a className="nav-link" href="#contact">
-                <i className="far fa-paper-plane"></i>
-                <p className="nav-link-text">Message</p>
-              </a>
-            </Jump>
-          </li>
-          <li className="nav-icon">
-            <Jump target={'#services'} options={{ duration: 2000 }}>
-              <a className="nav-link" href="#services">
-                <i className="fas fa-flask"></i>
-                <p className="nav-link-text">Services</p>
-              </a>
-            </Jump>
-          </li>
-          <li className="nav-icon">
-            <Jump target={'#about'} options={{ duration: 2000 }}>
-              <a className="nav-link" href="#about">
-                <i className="far fa-address-card"></i>
-                <p className="nav-link-text">Bio</p>
-              </a>
-            </Jump>
-          </li>
-
-          <li className="nav-item">
-            <div className="winker"></div>
-            <Jump target={'#contact'} options={{ duration: 2000 }}>
-              <a className="nav-link" href="#">
->>>>>>> dc93da5ff65562fd5b4d8143c55de14ecce8ccc4
                 Contact
               </a>
             </Jump>
           </li>
-<<<<<<< HEAD
           <li
             className='nav-item'
             ref={(el) => {
@@ -147,17 +99,10 @@ const Header = () => {
             <div className='winker'></div>
             <Jump target={"#services"} options={{ offset: -200 }}>
               <a className='nav-link' href='# '>
-=======
-          <li className="nav-item">
-            <div className="winker"></div>
-            <Jump target={'#services'} options={{ offset: -200 }}>
-              <a className="nav-link" href="#">
->>>>>>> dc93da5ff65562fd5b4d8143c55de14ecce8ccc4
                 Services
               </a>
             </Jump>
           </li>
-<<<<<<< HEAD
           <li
             className='nav-item'
             ref={(el) => {
@@ -167,12 +112,6 @@ const Header = () => {
             <div className='winker'></div>
             <Jump target={"#about"}>
               <a className='nav-link' href='# '>
-=======
-          <li className="nav-item">
-            <div className="winker"></div>
-            <Jump target={'#about'}>
-              <a className="nav-link" href="#">
->>>>>>> dc93da5ff65562fd5b4d8143c55de14ecce8ccc4
                 Qui suis-je ?
               </a>
             </Jump>
