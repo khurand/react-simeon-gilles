@@ -6,7 +6,7 @@ const Footer = () => {
   const [modalShow, setModalShow] = useState(false);
   return (
     <div className='footer-container' id='footer'>
-      <div className='container-fluid'>
+      <div className='container-fluid' data-aos='fade' data-aos-duration='1500'>
         <div className='row m-sm-0 m-xs-0'>
           <div className='col col-md-6 col-sm-12 col-xs-12 map mb-sm-3'>
             <Iframe

@@ -1,10 +1,12 @@
 .about-container {
-  padding-top: 90px;
+  padding-top: 110px;
+
   .container {
     max-width: 100%;
     margin: 0;
     padding: 0px 150px;
     height: 100%;
+
     .portrait {
       width: 300px;
       height: 300px;
@@ -19,6 +21,7 @@
       font-size: 1.1rem;
       line-height: 2rem;
       letter-spacing: 0.1rem;
+
       .bio-text {
         text-align: justify;
       }

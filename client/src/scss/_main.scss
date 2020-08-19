@@ -4,31 +4,15 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .app {
   line-height: 1.5;
   background: $primary-color;
   color: set-text-color($primary-color);
   font-size: 1rem;
-
-  .b2t {
-    right: 50px;
-
-    a {
-      padding: 20px;
-
-      svg {
-        @include easeOut();
-        color: $secondary-color;
-        font-size: 2rem;
-      }
-    }
-
-    &:hover {
-      a svg {
-        transform: rotate(-45deg);
-      }
-    }
-  }
 }
 
 h1,

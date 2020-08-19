@@ -169,6 +169,8 @@ export default class Contact extends Component {
                 onSubmit={this.handleSubmit}
                 noValidate
                 method='POST'
+                data-aos='zoom-down'
+                data-aos-delay='550'
               >
                 {/* Prénom */}
                 <FormGroup className='mb-2 prenom'>
@@ -347,7 +349,11 @@ export default class Contact extends Component {
                     </Alert>
                   ))}
 
-                <div className='form-group submit-button'>
+                <div
+                  className='form-group submit-button'
+                  data-aos='fade'
+                  data-aos-duration='1000'
+                >
                   <Button type='submit' size='md' className='btn'>
                     Envoyer
                   </Button>

@@ -5,7 +5,7 @@ const ContactInfo = () => {
   return (
     <div className='contact-info'>
       <ListGroup variant='flush'>
-        <ListGroup.Item>
+        <ListGroup.Item data-aos='zoom-out-down'>
           <div className='row infos'>
             <div className='infos-text'>
               <h5>
@@ -16,7 +16,7 @@ const ContactInfo = () => {
             </div>
           </div>
         </ListGroup.Item>
-        <ListGroup.Item>
+        <ListGroup.Item data-aos='zoom-out-down' data-aos-delay='200'>
           <div className='row infos'>
             <div className='infos-text'>
               <h5>
@@ -27,7 +27,7 @@ const ContactInfo = () => {
             </div>
           </div>
         </ListGroup.Item>
-        <ListGroup.Item>
+        <ListGroup.Item data-aos='zoom-out-down' data-aos-delay='300'>
           <div className='row infos'>
             <div className='infos-text'>
               <h5>
@@ -38,7 +38,7 @@ const ContactInfo = () => {
             </div>
           </div>
         </ListGroup.Item>
-        <ListGroup.Item>
+        <ListGroup.Item data-aos='zoom-out-down' data-aos-delay='400'>
           <div className='row infos'>
             <div className='infos-text'>
               <h5>

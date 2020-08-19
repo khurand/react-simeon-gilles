@@ -4,12 +4,29 @@ const About = () => {
   return (
     <div className='about-container' id='about'>
       <div className='container'>
-        <div className='portrait'></div>
+        <div
+          className='portrait'
+          data-aos='fade-right'
+          data-aos-duration='700'
+          data-aos-delay='300'
+          data-aos-offset='200'
+        ></div>
         <div className='bio'>
-          <div className='bio-heading'>
+          <div
+            className='bio-heading'
+            data-aos='fade-down'
+            data-aos-duration='700'
+            data-aos-offset='300'
+          >
             <h1 className='heading'>Heading Bio</h1>
           </div>
-          <div className='bio-text'>
+          <div
+            className='bio-text'
+            data-aos='fade-left'
+            data-aos-duration='700'
+            data-aos-delay='400'
+            data-aos-offset='200'
+          >
             <p className='text'>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut
               dolor ipsa placeat aspernatur in. Laborum reiciendis ex alias ipsa
@@ -39,3 +56,40 @@ const About = () => {
 };
 
 export default About;
+
+// import { useIntersection } from "react-use";
+// import gsap from "gsap";
+
+// // Creation d'une ref pour notre élément à animer
+// let elementRef = useRef(null);
+
+// // Observation des refs, seuil à 50% de l'élément
+// const intersection = useIntersection(elementRef, {
+//   root: null,
+//   rootMargin: "0px",
+//   threshold: 0.5,
+// });
+
+// console.log(elementRef);
+
+// const fadeIn = (elementRef) => {
+//   gsap.to(elementRef, 1.5, {
+//     opacity: 1,
+//     y: -20,
+//     ease: "power4.out",
+//     stagger: {
+//       amount: 0.3,
+//     },
+//   });
+// };
+// const fadeOut = (elementRef) => {
+//   gsap.to(elementRef, 1, {
+//     opacity: 0,
+//     y: 0,
+//     ease: "power4.out",
+//   });
+// };
+
+// intersection && intersection.intersectionRatio < 0.5
+//   ? fadeOut(".fadeIn")
+//   : fadeIn(".fadeIn");

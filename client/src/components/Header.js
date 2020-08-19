@@ -1,6 +1,5 @@
 import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
-import { Jump } from "react-jump";
 
 const Header = () => {
   let headerItem = useRef(null),
@@ -90,11 +89,9 @@ const Header = () => {
             }}
           >
             <div className='winker'></div>
-            <Jump target={"#contact"} options={{ duration: 2000 }}>
-              <a className='nav-link' href='# '>
-                Contact
-              </a>
-            </Jump>
+            <a className='nav-link' href='# '>
+              Contact
+            </a>
           </li>
           <li
             className='nav-item'
@@ -103,11 +100,9 @@ const Header = () => {
             }}
           >
             <div className='winker'></div>
-            <Jump target={"#services"} options={{ offset: -200 }}>
-              <a className='nav-link' href='# '>
-                Services
-              </a>
-            </Jump>
+            <a className='nav-link' href='# '>
+              Services
+            </a>
           </li>
           <li
             className='nav-item'
@@ -116,11 +111,9 @@ const Header = () => {
             }}
           >
             <div className='winker'></div>
-            <Jump target={"#about"}>
-              <a className='nav-link' href='# '>
-                Qui suis-je ?
-              </a>
-            </Jump>
+            <a className='nav-link' href='# '>
+              Qui suis-je ?
+            </a>
           </li>
         </ul>
       </div>
