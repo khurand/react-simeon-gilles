@@ -89,7 +89,7 @@ const Header = () => {
             }}
           >
             <div className='winker'></div>
-            <a className='nav-link' href='# '>
+            <a className='nav-link' href='#contact '>
               Contact
             </a>
           </li>
@@ -100,7 +100,7 @@ const Header = () => {
             }}
           >
             <div className='winker'></div>
-            <a className='nav-link' href='# '>
+            <a className='nav-link' href='#services '>
               Services
             </a>
           </li>
@@ -111,7 +111,7 @@ const Header = () => {
             }}
           >
             <div className='winker'></div>
-            <a className='nav-link' href='# '>
+            <a className='nav-link' href='#about '>
               Qui suis-je ?
             </a>
           </li>

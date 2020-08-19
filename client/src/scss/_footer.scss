@@ -51,23 +51,13 @@
 
         .footer-links {
           display: flex;
-          width: 100%;
-          justify-content: center;
           align-items: center;
           height: 100%;
-          @include border();
+          width: 100%;
+          padding: 5px 50px;
 
           .link {
-            margin: 0 20px;
-            font-size: 1.5rem;
-            color: set-text-color($primary-color);
-            @include easeOut();
-
-            &:hover,
-            &:active {
-              transform: scale(1.1) translateY(-5px);
-              color: $secondary-color;
-            }
+            @include btn();
           }
         }
       }

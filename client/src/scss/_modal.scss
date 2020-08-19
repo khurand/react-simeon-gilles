@@ -1,0 +1,19 @@
+.modal-content {
+  background-color: $primary-color !important;
+  border: 1px solid rgba(100, 255, 218, 0.7) !important;
+
+  .modal-header {
+    color: $secondary-color;
+  }
+
+  .modal-body p {
+    color: set-text-color($primary-color);
+  }
+
+  .modal-footer {
+    .btn {
+      @include btn();
+      font-size: 1.1rem;
+    }
+  }
+}

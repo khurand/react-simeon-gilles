@@ -354,7 +354,7 @@ export default class Contact extends Component {
                   data-aos='fade'
                   data-aos-duration='1000'
                 >
-                  <Button type='submit' size='md' className='btn'>
+                  <Button type='submit' size='md'>
                     Envoyer
                   </Button>
                 </div>

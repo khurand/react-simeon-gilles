@@ -4,10 +4,6 @@
   .app {
     padding-bottom: 90px;
 
-    .b2t {
-      display: none;
-    }
-
     // Header at bottom
     #header {
       width: 100vw;
@@ -16,7 +12,7 @@
       position: fixed;
       z-index: 10;
       bottom: 0;
-      opacity: 1;
+      opacity: 1 !important;
       background: $primary-color;
 
       .navbar {
@@ -176,6 +172,7 @@
 
             .btn {
               width: 100%;
+              margin: 0;
             }
           }
         }
@@ -254,7 +251,7 @@
   //Header
   #header {
     .nav-list {
-      width: 70% !important;
+      width: 75% !important;
       .nav-link {
         font-size: 1.1rem !important;
       }

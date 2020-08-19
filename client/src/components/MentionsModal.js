@@ -22,7 +22,7 @@ function MentionsModal(props) {
         </p>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
+        <Button onClick={props.onHide}>Fermer</Button>
       </Modal.Footer>
     </Modal>
   );

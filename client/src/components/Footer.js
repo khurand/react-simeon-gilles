@@ -32,12 +32,6 @@ const Footer = () => {
               <a className='link' href='# '>
                 <i className='fab fa-linkedin-in'></i>
               </a>
-              <a className='link' href='# '>
-                <i className='fab fa-twitter'></i>
-              </a>
-              <a className='link' href='# '>
-                <i className='fab fa-instagram'></i>
-              </a>
             </div>
           </div>
           <div className='col col-md-12 col-sm-12 col-xs-12 mentions'>

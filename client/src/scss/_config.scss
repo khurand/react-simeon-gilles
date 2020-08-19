@@ -5,6 +5,7 @@ $primary-color: #0a192f;
 $secondary-color: #64ffda;
 $third-color: #c0c3cc;
 $input-color: #10284a;
+$btn-hover-bkg-color: rgba(16, 40, 74, 0.5);
 
 // Mixins
 @mixin border {
@@ -19,6 +20,25 @@ $input-color: #10284a;
 // Box shadow
 @mixin boxShadow {
   box-shadow: rgba(100, 255, 218, 0.7) 0px 20px 30px -15px;
+}
+
+@mixin btn {
+  border-radius: 0.25rem;
+  margin: 0 20px;
+  font-size: 1.5rem;
+  color: set-text-color($primary-color);
+  width: 100px;
+  background: transparent;
+  padding: 8px 20px;
+  cursor: pointer;
+  @include border();
+  @include easeOut();
+
+  &:hover,
+  &:active {
+    background-color: $btn-hover-bkg-color;
+    color: $secondary-color;
+  }
 }
 
 // Set Text Color
