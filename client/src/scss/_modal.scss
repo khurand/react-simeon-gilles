@@ -4,6 +4,10 @@
 
   .modal-header {
     color: $secondary-color;
+
+    .close > span {
+      color: $secondary-color;
+    }
   }
 
   .modal-body p {

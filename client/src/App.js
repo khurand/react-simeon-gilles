@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import CarouselSlider from "./components/CarouselSlider";
 import Services from "./components/Services";
 import About from "./components/About";
-import ParallaxSection from "./components/ParallaxSection";
+import ParallaxBanner from "./components/ParallaxBanner";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Aos from "aos";
@@ -25,7 +25,7 @@ function App() {
           <CarouselSlider />
           <Services />
           <About />
-          <ParallaxSection />
+          <ParallaxBanner />
           <Contact />
         </div>
       </div>
