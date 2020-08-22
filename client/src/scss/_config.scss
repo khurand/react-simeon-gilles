@@ -2,6 +2,7 @@
 
 // Colors
 $primary-color: #0a192f;
+$primary-color-rgba: rgba(10, 25, 47, 0.5);
 $secondary-color: #64ffda;
 $third-color: #c0c3cc;
 $input-color: #10284a;
@@ -21,13 +22,19 @@ $btn-hover-bkg-color: rgba(16, 40, 74, 0.5);
 @mixin boxShadow {
   box-shadow: rgba(100, 255, 218, 0.7) 0px 20px 30px -15px;
 }
+@mixin boxShadow2 {
+  box-shadow: rgba(0, 0, 0, 0.9) 0px 20px 30px -15px;
+}
+@mixin boxShadowInset {
+  box-shadow: inset 0px 15px 20px -15px rgba(0, 0, 0, 0.9),
+    inset 0px -15px 20px -15px rgba(0, 0, 0, 0.9);
+}
 
 @mixin btn {
   border-radius: 0.25rem;
   margin: 0 20px;
   font-size: 1.1rem;
   color: set-text-color($primary-color);
-  width: 100px;
   background: transparent;
   padding: 8px 20px;
   cursor: pointer;

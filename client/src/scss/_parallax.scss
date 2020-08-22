@@ -1,16 +1,28 @@
 .parallax-container {
   padding-top: 90px;
+  letter-spacing: 0.1rem;
+
+  .separator {
+    height: 200px;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   .react-parallax-content {
-    height: 400px;
+    @include boxShadowInset();
+    height: 50vh;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    // .parallax-banner-text {
-    //   padding: 1rem;
-    //   background: rgba(238, 238, 238, 0.7);
-    // }
+    .parallax-banner-text {
+      @include boxShadow2();
+      font-size: 1.1rem;
+      padding: 1rem;
+      background: $primary-color-rgba;
+    }
   }
 }

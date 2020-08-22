@@ -6,6 +6,7 @@ import About from "./components/About";
 import ParallaxBanner from "./components/ParallaxBanner";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Cookie from "./components/Cookie";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
@@ -27,6 +28,7 @@ function App() {
           <About />
           <ParallaxBanner />
           <Contact />
+          <Cookie />
         </div>
       </div>
       <Footer />
