@@ -31,12 +31,6 @@ const Cookie = () => {
     localStorage.setItem("cookie", "true");
   };
 
-  // Cookie pas accepté
-  // const noCookie = () => {
-  //   setCookie(false);
-  //   hideCookieBox();
-  // };
-
   return (
     <div className='cookie-box'>
       <div className='cookie-body'>
@@ -50,9 +44,9 @@ const Cookie = () => {
         </p>
       </div>
       <div className='cookie-buttons'>
-        {/* <button className='btn btn-refuse' onClick={noCookie}>
+        <button className='btn btn-refuse' onClick={hideCookieBox}>
           Refuser
-        </button> */}
+        </button>
         <button className='btn btn-accept' onClick={okCookie}>
           Accepter
         </button>
