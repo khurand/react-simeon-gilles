@@ -5,10 +5,10 @@ const Cookie = () => {
   // A chaque refresh de la page, la valeur du state cookie reprend sa valeur par défaut qui est "". Pour faire en sorte que cookie garde la valeur "true" pour ne pas afficher la bannière tout le temps, on lui passe la valeur de l'entrée cookie du localStorage comme valeur par défaut.
   const [cookie, setCookie] = useState(() => {
     // On récupère la valeur de l'entrée "cookie" dans le localStorage dans une variable
-    const cookieData = localStorage.getItem("cookie");
+    const cookieVal = localStorage.getItem("cookie");
 
     // Si une valeur existe, on retourne celle-ci pour updater la valeur du state cookie, sinon on retourne rien par défaut.
-    return cookieData ? cookieData : "";
+    return cookieVal ? cookieVal : "";
   });
 
   // A chaque connexion au site, on vérifie si cookie est à true. Si oui, la bannière est cachée
