@@ -97,6 +97,10 @@
           text-align: left;
           width: 100%;
           margin: 5px 5px 0 0;
+
+          svg {
+            margin-right: 10px;
+          }
         }
 
         .conditions-text .error {
@@ -120,13 +124,16 @@
 
       .alert-success {
         padding-left: 30px;
+
         .alert-title {
           display: flex;
           align-items: center;
+          justify-content: center;
           margin: 0;
 
           h5 {
             margin: 0;
+            color: #155724;
           }
 
           .fa-paper-plane {

@@ -19,7 +19,7 @@ const About = () => {
             data-aos-duration='700'
             data-aos-offset='300'
           >
-            <h1 className='heading'>Heading Bio</h1>
+            <h4 className='heading'>Heading Bio</h4>
           </div>
           <div
             className='bio-text'

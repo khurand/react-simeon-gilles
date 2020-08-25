@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 const ScrollIndicator = () => {
   window.addEventListener("scroll", moveScrollIndicator);
@@ -9,7 +9,12 @@ const ScrollIndicator = () => {
     const percentage = (window.scrollY / maxScrollableHeight) * 100;
     scrollIndicatorElt.style.width = percentage + "%";
   }
-  return <div className='scroll-indicator-line' style={style}></div>;
+
+  return (
+    <Fragment>
+      <div className='scroll-indicator-line' style={style}></div>
+    </Fragment>
+  );
 };
 
 const style = {

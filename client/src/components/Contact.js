@@ -23,6 +23,7 @@ export default class Contact extends Component {
       message: "",
       conditions: false,
       isSent: false,
+      isLoading: false,
       formErrors: {
         firstNameError: "",
         lastNameError: "",
@@ -99,8 +100,11 @@ export default class Contact extends Component {
       }));
       return false;
     }
-    // Si les conditions du formulaire sont valides, le mail est envoyé
-    this.setState({ isSent: true });
+    // Si les conditions du formulaire sont valides, le mail est envoyé.
+    // On lance l'animation du spinner si l'envoi est validé.
+    this.setState({ isLoading: true });
+    // L'affichage du message de succès est retardé de 1s pour s'afficher à la fin du spinner.
+    setTimeout(() => this.setState({ isSent: true }), 1000);
     return true;
   };
 
@@ -151,8 +155,10 @@ export default class Contact extends Component {
       });
     }
 
-    // Le message de succès d'envoi du mail disparaît au bout de 3s et isSent repasse en false
-    setTimeout(() => this.setState({ isSent: false }), 3000);
+    // Le message de succès d'envoi du mail disparaît au bout de 3,5s et isSent repasse en false.
+    // Idem pour le spinner à 1s
+    setTimeout(() => this.setState({ isSent: false }), 3500);
+    setTimeout(() => this.setState({ isLoading: false }), 1000);
   }
 
   render() {
@@ -202,6 +208,7 @@ export default class Contact extends Component {
                   </InputGroup>
                   {this.state.formErrors.firstNameError && (
                     <p className='error'>
+                      <i class='fas fa-exclamation-triangle'></i>
                       {this.state.formErrors.firstNameError}
                     </p>
                   )}
@@ -236,6 +243,7 @@ export default class Contact extends Component {
                   </InputGroup>
                   {this.state.formErrors.lastNameError && (
                     <p className='error'>
+                      <i class='fas fa-exclamation-triangle'></i>
                       {this.state.formErrors.lastNameError}
                     </p>
                   )}
@@ -269,7 +277,10 @@ export default class Contact extends Component {
                     </InputGroup.Append>
                   </InputGroup>
                   {this.state.formErrors.emailError && (
-                    <p className='error'>{this.state.formErrors.emailError}</p>
+                    <p className='error'>
+                      <i class='fas fa-exclamation-triangle'></i>
+                      {this.state.formErrors.emailError}
+                    </p>
                   )}
                 </FormGroup>
 
@@ -302,6 +313,7 @@ export default class Contact extends Component {
                   </InputGroup>
                   {this.state.formErrors.messageError && (
                     <p className='error'>
+                      <i class='fas fa-exclamation-triangle'></i>
                       {this.state.formErrors.messageError}
                     </p>
                   )}
@@ -329,6 +341,7 @@ export default class Contact extends Component {
                       </p>
                       {this.state.formErrors.checkedError && (
                         <p className='error'>
+                          <i class='fas fa-exclamation-triangle'></i>
                           {this.state.formErrors.checkedError}
                         </p>
                       )}
@@ -337,18 +350,14 @@ export default class Contact extends Component {
                 </div>
 
                 {/* Message succes envoi */}
-                {this.state.isSent &&
-                  ({
-                    /* <Spinner animation="border" variant="primary" /> */
-                  },
-                  (
-                    <Alert variant='success'>
-                      <Alert.Heading className='alert-title'>
-                        <i className='far fa-paper-plane mr-3'></i>
-                        <h5>Votre message a bien été envoyé !</h5>
-                      </Alert.Heading>
-                    </Alert>
-                  ))}
+                {this.state.isSent && (
+                  <Alert variant='success'>
+                    <Alert.Heading className='alert-title'>
+                      <i className='far fa-paper-plane mr-3'></i>
+                      <h5>Votre message a bien été envoyé !</h5>
+                    </Alert.Heading>
+                  </Alert>
+                )}
 
                 <div
                   className='form-group submit-button'
@@ -356,7 +365,11 @@ export default class Contact extends Component {
                   data-aos-duration='1000'
                 >
                   <Button type='submit' size='md'>
-                    Envoyer
+                    {this.state.isLoading ? (
+                      <Spinner animation='border' variant='primary' />
+                    ) : (
+                      "Envoyer"
+                    )}
                   </Button>
                 </div>
               </Form>
