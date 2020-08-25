@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import ScrollIndicator from "./components/ScrollIndicator";
 import Header from "./components/Header";
 import CarouselSlider from "./components/CarouselSlider";
 import Services from "./components/Services";
@@ -20,6 +21,7 @@ function App() {
 
   return (
     <div className='app'>
+      <ScrollIndicator />
       <Header />
       <div className='container-fluid' id='main-content'>
         <div className='main'>

@@ -4,6 +4,15 @@
   .app {
     padding-bottom: 90px;
 
+    h3 {
+      font-size: 1.6rem;
+      padding: 0 20px 0 20px !important;
+
+      &:after {
+        width: 100% !important;
+      }
+    }
+
     // Header at bottom
     #header {
       width: 100vw;
@@ -42,6 +51,11 @@
             height: 100%;
             margin: 0px 2px;
             width: 100%;
+
+            &:active,
+            &:focus {
+              background-color: rgba(16, 40, 74, 0.5);
+            }
 
             .nav-link {
               text-decoration: none;
@@ -119,6 +133,10 @@
       .bio {
         display: block;
         width: 100%;
+
+        .bio-heading {
+          text-align: center;
+        }
         .bio-text {
           text-align: justify;
         }
@@ -199,6 +217,16 @@
 
 // Small devices (landscape phones, small tablets, 577px to 767px)
 @include media-breakpoint-only(sm) {
+  h3 {
+    font-size: 1.6rem;
+    padding: 0 20px 0 20px !important;
+
+    &:after {
+      width: 100% !important;
+      max-width: 350px;
+    }
+  }
+
   //Header
   #header {
     .nav-list {
@@ -304,8 +332,6 @@
     }
   }
 
-  // About
-
   // Form
   .checkbox {
     .conditions-text {
@@ -326,4 +352,12 @@
 
 // Large devices (desktops, more than 1200px)
 @include media-breakpoint-only(xl) {
+  h3 {
+    padding: 0 20px 0 120px !important;
+
+    &:after {
+      width: 100% !important;
+      max-width: 350px;
+    }
+  }
 }

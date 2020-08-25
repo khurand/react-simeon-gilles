@@ -8,26 +8,27 @@ function Services() {
       titre: "card-title-1",
       text:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos, nobis.",
-      animationDelay: "500",
+      animationDelay: "200",
     },
     {
       icon: require("./img/icn/medical-equipment.svg"),
       titre: "card-title-2",
       text:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos, nobis.",
-      animationDelay: "1000",
+      animationDelay: "300",
     },
     {
       icon: require("./img/icn/sonography.svg"),
       titre: "card-title-3",
       text:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos, nobis.",
-      animationDelay: "1500",
+      animationDelay: "400",
     },
   ];
 
   return (
     <div className='card-container' id='services'>
+      <h3 className='container-title'>Mes Services</h3>
       <CardDeck>
         <div className='row'>
           {cards.map((item, idx) => {

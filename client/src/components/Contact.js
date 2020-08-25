@@ -158,6 +158,7 @@ export default class Contact extends Component {
   render() {
     return (
       <div className='contact-container' id='contact'>
+        <h3 className='container-title'>Contactez-moi</h3>
         <div className='container'>
           <Row>
             <Col className='col-md-4 col-sm-12'>
