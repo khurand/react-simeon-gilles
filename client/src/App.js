@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import Cookie from "./components/Cookie";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import ContextProvider from "./contexts/Context";
 
 function App() {
   useEffect(() => {
@@ -21,19 +22,21 @@ function App() {
 
   return (
     <div className='app'>
-      <ScrollIndicator />
-      <Header />
-      <div className='container-fluid' id='main-content'>
-        <div className='main'>
-          <CarouselSlider />
-          <Services />
-          <About />
-          <ParallaxBanner />
-          <Contact />
-          <Cookie />
+      <ContextProvider>
+        <ScrollIndicator />
+        <Header />
+        <div className='container-fluid' id='main-content'>
+          <div className='main'>
+            <CarouselSlider />
+            <Services />
+            <About />
+            <ParallaxBanner />
+            <Contact />
+            <Cookie />
+          </div>
         </div>
-      </div>
-      <Footer />
+        <Footer />
+      </ContextProvider>
     </div>
   );
 }

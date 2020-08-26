@@ -1,7 +1,11 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useContext } from "react";
 import gsap from "gsap";
+import { Context } from "../contexts/Context";
+import PropTypes from "prop-types";
 
 const Header = () => {
+  const context = useContext(Context);
+
   let headerItem = useRef(null),
     LinkItem1 = useRef(null),
     LinkItem2 = useRef(null),
@@ -82,7 +86,8 @@ const Header = () => {
     >
       <div className='navbar'>
         <a className='nav-brand' href='/ '>
-          Logo
+          <i className={context.logo} />
+          <h4>{context.title}</h4>
         </a>
 
         <ul className='nav-list'>
@@ -157,6 +162,13 @@ const Header = () => {
       </div>
     </nav>
   );
+};
+
+Header.propTypes = {
+  context: PropTypes.shape({
+    logo: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }),
 };
 
 export default Header;

@@ -22,6 +22,10 @@
       font-size: 2rem;
       color: $secondary-color;
       text-decoration: none;
+
+      svg {
+        margin-right: 10px;
+      }
     }
 
     .nav-list {

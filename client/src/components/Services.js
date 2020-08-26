@@ -1,34 +1,11 @@
 import React from "react";
 import { Card, CardDeck } from "react-bootstrap";
+import PropTypes from "prop-types";
 
-function Services() {
-  const cards = [
-    {
-      icon: require("./img/icn/procesador.svg"),
-      titre: "card-title-1",
-      text:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos, nobis.",
-      animationDelay: "200",
-    },
-    {
-      icon: require("./img/icn/medical-equipment.svg"),
-      titre: "card-title-2",
-      text:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos, nobis.",
-      animationDelay: "300",
-    },
-    {
-      icon: require("./img/icn/sonography.svg"),
-      titre: "card-title-3",
-      text:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos, nobis.",
-      animationDelay: "400",
-    },
-  ];
-
+const Services = ({ title, cards }) => {
   return (
     <div className='card-container' id='services'>
-      <h3 className='container-title'>Mes Services</h3>
+      <h3 className='container-title'>{title}</h3>
       <CardDeck>
         <div className='row'>
           {cards.map((item, idx) => {
@@ -54,6 +31,38 @@ function Services() {
       </CardDeck>
     </div>
   );
-}
+};
+
+Services.defaultProps = {
+  title: "Mes Services",
+  cards: [
+    {
+      icon: require("./img/icn/procesador.svg"),
+      titre: "card-title-1",
+      text:
+        "1 - Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos, nobis.",
+      animationDelay: "200",
+    },
+    {
+      icon: require("./img/icn/medical-equipment.svg"),
+      titre: "card-title-2",
+      text:
+        "2 - Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos, nobis.",
+      animationDelay: "300",
+    },
+    {
+      icon: require("./img/icn/sonography.svg"),
+      titre: "card-title-3",
+      text:
+        "3 - Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos, nobis.",
+      animationDelay: "400",
+    },
+  ],
+};
+
+Services.propTypes = {
+  title: PropTypes.string.isRequired,
+  cards: PropTypes.array.isRequired,
+};
 
 export default Services;
