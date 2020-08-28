@@ -5,7 +5,8 @@ import CarouselSlider from "./components/CarouselSlider";
 import Services from "./components/Services";
 import About from "./components/About";
 import ParallaxBanner from "./components/ParallaxBanner";
-import Contact from "./components/Contact";
+// import Contact from "./components/Contact";
+import ContactHooks from "./components/form/ContactHooks";
 import Footer from "./components/Footer";
 import Cookie from "./components/Cookie";
 import Aos from "aos";
@@ -31,7 +32,7 @@ function App() {
             <Services />
             <About />
             <ParallaxBanner />
-            <Contact />
+            <ContactHooks />
             <Cookie />
           </div>
         </div>

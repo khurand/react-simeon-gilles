@@ -1,19 +1,33 @@
-import React, { createContext, Component } from "react";
+import React, { createContext } from "react";
 
-export const Context = createContext();
+const globalState = {
+  title: "Gilles Simeon",
+  logo: "fas fa-heartbeat",
+};
 
-class ContextProvider extends Component {
-  state = {
-    title: "Gilles Simeon",
-    logo: "fas fa-heartbeat",
-  };
-  render() {
-    return (
-      <Context.Provider value={{ ...this.state }}>
-        {this.props.children}
-      </Context.Provider>
-    );
-  }
-}
+// Create context
+export const Context = createContext(globalState);
+
+// Provider component
+const ContextProvider = ({ children }) => {
+  return (
+    <Context.Provider value={{ ...globalState }}>{children}</Context.Provider>
+  );
+};
+
+// export const Context = createContext();
+// class ContextProvider extends Component {
+//   state = {
+//     title: "Gilles Simeon",
+//     logo: "fas fa-heartbeat",
+//   };
+//   render() {
+//     return (
+//       <Context.Provider value={{ ...this.state }}>
+//         {this.props.children}
+//       </Context.Provider>
+//     );
+//   }
+// }
 
 export default ContextProvider;
