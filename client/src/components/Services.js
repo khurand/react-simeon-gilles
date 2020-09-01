@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const Services = ({ title, cards }) => {
   return (
-    <div className='card-container' id='services'>
+    <div className='card-container section' id='services'>
       <h3 className='container-title'>{title}</h3>
       <CardDeck>
         <div className='row'>

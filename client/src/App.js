@@ -26,7 +26,7 @@ function App() {
       <ContextProvider>
         <ScrollIndicator />
         <Header />
-        <div className='container-fluid' id='main-content'>
+        <div className='container-fluid'>
           <div className='main'>
             <CarouselSlider />
             <Services />

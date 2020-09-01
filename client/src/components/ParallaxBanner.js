@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
 const ParallaxBanner = ({ text1, text2 }) => {
   const context = useContext(Context);
   return (
-    <div className='parallax-container' id='parallax'>
+    <div className='parallax-container section' id='parallax'>
       <Parallax bgImage={image2} bgImageAlt='parallax banner' strength={300}>
         <h2 className='parallax-banner-text'>{text1}</h2>
       </Parallax>

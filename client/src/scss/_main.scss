@@ -37,6 +37,11 @@ p {
 .main {
   counter-reset: title 0;
 
+  .section {
+    padding-bottom: 90px;
+    padding-top: 10px;
+  }
+
   .container-title {
     margin: 10px 0px 40px;
     display: flex;

@@ -1,15 +1,18 @@
 const express = require("express");
+const colors = require("colors");
 const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
-const cookieParser = require("cookie-parser");
 const cors = require("cors");
+const dotenv = require("dotenv");
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(cookieParser());
 app.use(cors());
-require("dotenv").config();
+
+dotenv.config({
+  path: "./config/.env",
+});
 
 app.use(function (err, req, res, next) {
   console.error(err.stack);
@@ -63,7 +66,13 @@ app.post("/send", (req, res) => {
     //   }
     // });
   }
-  mail().catch(console.error);
+  mail().catch(console.error).red;
 });
 
-app.listen(5000, () => console.log("server started at port 5000"));
+const PORT = process.env.PORT || 5000;
+app.listen(
+  PORT,
+  console.log(
+    `Server running in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold
+  )
+);

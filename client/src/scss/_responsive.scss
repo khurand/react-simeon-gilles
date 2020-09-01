@@ -87,7 +87,7 @@
               font-size: 1rem;
 
               &:before {
-                content: '0' counter(item) '.';
+                content: "0" counter(item) ".";
                 text-align: right;
                 color: $secondary-color;
                 font-size: 0.9rem;
@@ -124,7 +124,7 @@
       .portrait {
         width: 250px;
         height: 250px;
-        background: url('../components/img/bat-portrait-2-min.jpg') no-repeat;
+        background: url("../components/img/bat-portrait-2-min.jpg") no-repeat;
         border-radius: 1rem;
         float: none;
         shape-outside: none;
@@ -235,10 +235,18 @@
 
   //Header
   #header {
-    .nav-list {
-      width: 80% !important;
-      .nav-link {
-        font-size: 1rem !important;
+    .navbar {
+      justify-content: center !important;
+      align-items: center !important;
+      .nav-brand {
+        margin-right: 0 !important;
+      }
+      .nav-list {
+        width: 80% !important;
+        .nav-link {
+          font-size: 1rem !important;
+          padding: 0;
+        }
       }
     }
   }
@@ -266,7 +274,7 @@
       .portrait {
         width: 250px !important;
         height: 250px !important;
-        background: url('../components/img/bat-portrait-2-min.jpg') no-repeat !important;
+        background: url("../components/img/bat-portrait-2-min.jpg") no-repeat !important;
       }
     }
   }
@@ -284,10 +292,18 @@
 @include media-breakpoint-only(md) {
   //Header
   #header {
-    .nav-list {
-      width: 75% !important;
-      .nav-link {
-        font-size: 1.1rem !important;
+    .navbar {
+      justify-content: center !important;
+      align-items: center !important;
+      .nav-brand {
+        margin-right: 0 !important;
+      }
+      .nav-list {
+        width: 75% !important;
+        .nav-link {
+          font-size: 1.1rem !important;
+          padding: 0;
+        }
       }
     }
   }
@@ -300,7 +316,7 @@
       .portrait {
         width: 250px !important;
         height: 250px !important;
-        background: url('../components/img/bat-portrait-2-min.jpg') no-repeat !important;
+        background: url("../components/img/bat-portrait-2-min.jpg") no-repeat !important;
       }
     }
   }

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const About = ({ description, heading, title }) => {
   return (
-    <div className='about-container' id='about'>
+    <div className='about-container section' id='about'>
       <h3 className='container-title'>{title}</h3>
       <div className='container'>
         <div
