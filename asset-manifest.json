@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/react-simeon-gilles/static/css/main.881f0689.chunk.css",
-    "main.js": "/react-simeon-gilles/static/js/main.ed07e918.chunk.js",
-    "main.js.map": "/react-simeon-gilles/static/js/main.ed07e918.chunk.js.map",
+    "main.css": "/react-simeon-gilles/static/css/main.9f892303.chunk.css",
+    "main.js": "/react-simeon-gilles/static/js/main.bb960916.chunk.js",
+    "main.js.map": "/react-simeon-gilles/static/js/main.bb960916.chunk.js.map",
     "runtime-main.js": "/react-simeon-gilles/static/js/runtime-main.cc1856f5.js",
     "runtime-main.js.map": "/react-simeon-gilles/static/js/runtime-main.cc1856f5.js.map",
     "static/css/2.50a5f423.chunk.css": "/react-simeon-gilles/static/css/2.50a5f423.chunk.css",
-    "static/js/2.d5b9c35b.chunk.js": "/react-simeon-gilles/static/js/2.d5b9c35b.chunk.js",
-    "static/js/2.d5b9c35b.chunk.js.map": "/react-simeon-gilles/static/js/2.d5b9c35b.chunk.js.map",
+    "static/js/2.067ab090.chunk.js": "/react-simeon-gilles/static/js/2.067ab090.chunk.js",
+    "static/js/2.067ab090.chunk.js.map": "/react-simeon-gilles/static/js/2.067ab090.chunk.js.map",
     "index.html": "/react-simeon-gilles/index.html",
-    "precache-manifest.7c55841edb0b10fc8a95dfccda962dc7.js": "/react-simeon-gilles/precache-manifest.7c55841edb0b10fc8a95dfccda962dc7.js",
+    "precache-manifest.6259a40b10e5463a42de159ecacd7f4d.js": "/react-simeon-gilles/precache-manifest.6259a40b10e5463a42de159ecacd7f4d.js",
     "service-worker.js": "/react-simeon-gilles/service-worker.js",
     "static/css/2.50a5f423.chunk.css.map": "/react-simeon-gilles/static/css/2.50a5f423.chunk.css.map",
-    "static/css/main.881f0689.chunk.css.map": "/react-simeon-gilles/static/css/main.881f0689.chunk.css.map",
-    "static/js/2.d5b9c35b.chunk.js.LICENSE.txt": "/react-simeon-gilles/static/js/2.d5b9c35b.chunk.js.LICENSE.txt",
+    "static/css/main.9f892303.chunk.css.map": "/react-simeon-gilles/static/css/main.9f892303.chunk.css.map",
+    "static/js/2.067ab090.chunk.js.LICENSE.txt": "/react-simeon-gilles/static/js/2.067ab090.chunk.js.LICENSE.txt",
     "static/media/app.scss": "/react-simeon-gilles/static/media/bat-portrait-2.b7565fce.jpg",
     "static/media/img-parallax2.jpg": "/react-simeon-gilles/static/media/img-parallax2.c42af100.jpg",
     "static/media/img-parallax3.jpg": "/react-simeon-gilles/static/media/img-parallax3.60d1b75d.jpg",
@@ -29,8 +29,8 @@
   "entrypoints": [
     "static/js/runtime-main.cc1856f5.js",
     "static/css/2.50a5f423.chunk.css",
-    "static/js/2.d5b9c35b.chunk.js",
-    "static/css/main.881f0689.chunk.css",
-    "static/js/main.ed07e918.chunk.js"
+    "static/js/2.067ab090.chunk.js",
+    "static/css/main.9f892303.chunk.css",
+    "static/js/main.bb960916.chunk.js"
   ]
 }
