@@ -23,6 +23,15 @@ const CarouselSlider = ({ slides, params }) => {
           );
         })}
       </Carousel>
+      <div className='under-content'>
+        <div className='logo'></div>
+        <div className='text'>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur,
+            porro?
+          </p>
+        </div>
+      </div>
     </div>
   );
 };

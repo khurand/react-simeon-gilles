@@ -48,7 +48,6 @@
             justify-content: center;
             align-items: center;
             font-size: 1.2rem;
-            border: rgba(100, 255, 218, 0.7) 1px solid;
             height: 100%;
             margin: 0px 2px;
             width: 100%;
@@ -101,7 +100,7 @@
 
     // Carousel
     #carousel {
-      height: 50vh !important;
+      // height: 50vh !important;
 
       .carousel-caption .content {
         h1 {
@@ -109,6 +108,16 @@
         }
         p {
           font-size: 0.9rem;
+        }
+      }
+      .under-content {
+        display: block !important;
+        height: 50vh !important;
+        .text {
+          height: 100%;
+          p {
+            color: red;
+          }
         }
       }
     }
