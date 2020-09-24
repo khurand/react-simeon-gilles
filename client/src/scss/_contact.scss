@@ -23,18 +23,18 @@
 
       .list-group {
         margin: 0;
-        // padding: 2px;
+        padding: 5px;
 
         .list-group-item {
-          border-radius: 2px;
+          border-radius: 5px;
           background: $primary-color;
           color: set-text-color($primary-color);
           @include border();
           margin-bottom: 10px;
 
-          // &:hover {
-          //   border-left: 4px solid $secondary-color;
-          // }
+          &:hover {
+            border-left: 4px solid $secondary-color;
+          }
 
           .infos {
             padding-left: 10px;
