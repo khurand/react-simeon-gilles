@@ -38,6 +38,44 @@ const Header = () => {
     );
   }, []);
 
+  // Hide header when scrolldown
+  const maxScrollXValue = document.body.scrollWidth;
+
+  // when #header is at bottom
+  if (maxScrollXValue < 450) {
+    let prevScrollPos = window.pageYOffset;
+
+    window.onscroll = () => {
+      var currentScrollPos = window.pageYOffset;
+
+      if (prevScrollPos > currentScrollPos) {
+        document.getElementById("header").style.bottom = "0";
+      } else {
+        document.getElementById("header").style.bottom = "-100px";
+      }
+      prevScrollPos = currentScrollPos;
+    };
+  } else if (maxScrollXValue > 450) {
+    // get previous vertical position of the window
+    let prevScrollPos = window.pageYOffset;
+
+    // call anonymous function on scroll
+    window.onscroll = () => {
+      // Get vertical position after a scrolling
+      var currentScrollPos = window.pageYOffset;
+
+      // if prev is superior than current, the header is visible. If not, the header is hidden.
+      if (prevScrollPos > currentScrollPos) {
+        document.getElementById("header").style.top = "0";
+      } else {
+        document.getElementById("header").style.top = "-100px";
+      }
+
+      // then, the prev value is defined with the current value.
+      prevScrollPos = currentScrollPos;
+    };
+  }
+
   return (
     <nav
       className='navbar-container'
