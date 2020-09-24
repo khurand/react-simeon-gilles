@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import "../scss/app.scss";
 import PropTypes from "prop-types";
+import { Context } from "../contexts/Context";
 
 const CarouselSlider = ({ slides, params }) => {
+  const context = useContext(Context);
+
   return (
     <div className='carousel-container' id='carousel'>
       <Carousel {...params}>
@@ -23,6 +26,13 @@ const CarouselSlider = ({ slides, params }) => {
           );
         })}
       </Carousel>
+      <div className='second-part-responsive'>
+        <a className='nav-brand' href='/ '>
+          <i className={context.logo} />
+          <h4>{context.title}</h4>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </a>
+      </div>
     </div>
   );
 };

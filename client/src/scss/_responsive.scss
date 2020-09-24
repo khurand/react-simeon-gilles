@@ -14,6 +14,21 @@
       }
     }
 
+    // Cookie banner
+    .cookie-box {
+      height: 150px !important;
+      bottom: 80px;
+
+      .cookie-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .btn-accept {
+          height: 30px !important;
+        }
+      }
+    }
+
     // Header at bottom
     #header {
       width: 100vw;
@@ -22,20 +37,19 @@
       position: fixed;
       z-index: 10;
       bottom: 0;
-      opacity: 1 !important;
       background: $primary-color;
 
       .navbar {
+        display: none;
+      }
+
+      .navbar-responsive {
         height: 100%;
         width: 100%;
         display: flex;
         justify-content: space-between;
 
-        .nav-brand {
-          display: none !important;
-        }
-
-        .nav-list {
+        .nav-list-responsive {
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -48,9 +62,7 @@
             justify-content: center;
             align-items: center;
             font-size: 1.2rem;
-            border: rgba(100, 255, 218, 0.7) 1px solid;
             height: 100%;
-            margin: 0px 2px;
             width: 100%;
 
             &:active,
@@ -72,43 +84,53 @@
               }
             }
           }
-
-          .nav-item {
-            counter-increment: item 1;
-            display: none;
-
-            .nav-link {
-              display: inline-block;
-              position: relative;
-              cursor: pointer;
-              text-decoration: none;
-              padding: 12px 10px;
-              white-space: nowrap;
-              font-size: 1rem;
-
-              &:before {
-                content: "0" counter(item) ".";
-                text-align: right;
-                color: $secondary-color;
-                font-size: 0.9rem;
-                transition: 0.7s ease;
-              }
-            }
-          }
         }
       }
     }
 
     // Carousel
     #carousel {
-      height: 50vh !important;
+      height: 100vh;
 
-      .carousel-caption .content {
-        h1 {
-          font-size: 1.6rem;
+      .carousel {
+        height: 50vh;
+        .carousel-caption .content {
+          h1 {
+            font-size: 1.6rem;
+          }
+          p {
+            font-size: 0.9rem;
+          }
+        }
+      }
+
+      .second-part-responsive {
+        height: 40vh;
+        display: block;
+        .nav-brand {
+          height: 100%;
+          width: 100%;
+          margin-right: auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: $secondary-color;
+          text-decoration: none;
+          text-align: center;
+          flex-direction: column;
+        }
+
+        svg {
+          font-size: 5rem;
+          margin-bottom: 10px;
+        }
+
+        h4 {
+          margin: 0;
+          font-size: 1.3rem;
         }
         p {
-          font-size: 0.9rem;
+          font-size: 1rem;
         }
       }
     }

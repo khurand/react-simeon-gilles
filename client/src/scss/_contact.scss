@@ -23,7 +23,7 @@
 
       .list-group {
         margin: 0;
-        padding: 0;
+        padding: 2px;
 
         .list-group-item {
           border-radius: 5px;
@@ -32,9 +32,9 @@
           @include border();
           margin-bottom: 10px;
 
-          &:hover {
-            border-left: 4px solid $secondary-color;
-          }
+          // &:hover {
+          //   border-left: 4px solid $secondary-color;
+          // }
 
           .infos {
             padding-left: 10px;
