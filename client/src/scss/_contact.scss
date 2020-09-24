@@ -23,10 +23,10 @@
 
       .list-group {
         margin: 0;
-        padding: 2px;
+        // padding: 2px;
 
         .list-group-item {
-          border-radius: 5px;
+          border-radius: 2px;
           background: $primary-color;
           color: set-text-color($primary-color);
           @include border();
