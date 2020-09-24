@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "16ced69465a33fa4e7efccd2bc43c23d",
+    "revision": "2294e1e2b2e5897f139d26911a471c46",
     "url": "/react-simeon-gilles/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-simeon-gilles/static/css/2.50a5f423.chunk.css"
   },
   {
-    "revision": "d6766994cec76afa13c8",
-    "url": "/react-simeon-gilles/static/css/main.1d48c478.chunk.css"
+    "revision": "7bb75633cfc8849d655d",
+    "url": "/react-simeon-gilles/static/css/main.f5190c08.chunk.css"
   },
   {
     "revision": "3bc52c56ff065fcaf8e2",
@@ -20,7 +20,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-simeon-gilles/static/js/2.067ab090.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d6766994cec76afa13c8",
+    "revision": "7bb75633cfc8849d655d",
     "url": "/react-simeon-gilles/static/js/main.bb960916.chunk.js"
   },
   {

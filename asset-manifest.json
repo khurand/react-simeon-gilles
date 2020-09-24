@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/react-simeon-gilles/static/css/main.1d48c478.chunk.css",
+    "main.css": "/react-simeon-gilles/static/css/main.f5190c08.chunk.css",
     "main.js": "/react-simeon-gilles/static/js/main.bb960916.chunk.js",
     "main.js.map": "/react-simeon-gilles/static/js/main.bb960916.chunk.js.map",
     "runtime-main.js": "/react-simeon-gilles/static/js/runtime-main.cc1856f5.js",
@@ -9,10 +9,10 @@
     "static/js/2.067ab090.chunk.js": "/react-simeon-gilles/static/js/2.067ab090.chunk.js",
     "static/js/2.067ab090.chunk.js.map": "/react-simeon-gilles/static/js/2.067ab090.chunk.js.map",
     "index.html": "/react-simeon-gilles/index.html",
-    "precache-manifest.56af2b738780b236586327ef7fdf8475.js": "/react-simeon-gilles/precache-manifest.56af2b738780b236586327ef7fdf8475.js",
+    "precache-manifest.0fa1aa10ac4c1b8f7d3865bce4d1bb78.js": "/react-simeon-gilles/precache-manifest.0fa1aa10ac4c1b8f7d3865bce4d1bb78.js",
     "service-worker.js": "/react-simeon-gilles/service-worker.js",
     "static/css/2.50a5f423.chunk.css.map": "/react-simeon-gilles/static/css/2.50a5f423.chunk.css.map",
-    "static/css/main.1d48c478.chunk.css.map": "/react-simeon-gilles/static/css/main.1d48c478.chunk.css.map",
+    "static/css/main.f5190c08.chunk.css.map": "/react-simeon-gilles/static/css/main.f5190c08.chunk.css.map",
     "static/js/2.067ab090.chunk.js.LICENSE.txt": "/react-simeon-gilles/static/js/2.067ab090.chunk.js.LICENSE.txt",
     "static/media/app.scss": "/react-simeon-gilles/static/media/bat-portrait-2.b7565fce.jpg",
     "static/media/img-parallax2.jpg": "/react-simeon-gilles/static/media/img-parallax2.c42af100.jpg",
@@ -30,7 +30,7 @@
     "static/js/runtime-main.cc1856f5.js",
     "static/css/2.50a5f423.chunk.css",
     "static/js/2.067ab090.chunk.js",
-    "static/css/main.1d48c478.chunk.css",
+    "static/css/main.f5190c08.chunk.css",
     "static/js/main.bb960916.chunk.js"
   ]
 }
