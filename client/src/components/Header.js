@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../contexts/Context";
+import { HashLink as Link } from "react-router-hash-link";
+import { BrowserRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 
 const Header = () => {
@@ -52,24 +54,26 @@ const Header = () => {
         </a>
 
         <ul className='nav-list'>
-          <li className='nav-item'>
-            <div className='winker'></div>
-            <a className='nav-link' href='#services '>
-              Services
-            </a>
-          </li>
-          <li className='nav-item'>
-            <div className='winker'></div>
-            <a className='nav-link' href='#about '>
-              Qui suis-je ?
-            </a>
-          </li>
-          <li className='nav-item'>
-            <div className='winker'></div>
-            <a className='nav-link' href='#contact '>
-              Contact
-            </a>
-          </li>
+          <BrowserRouter>
+            <li className='nav-item'>
+              <div className='winker'></div>
+              <Link to='/#services' className='nav-link'>
+                Services
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <div className='winker'></div>
+              <Link to='/#about' className='nav-link'>
+                Qui suis-je ?
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <div className='winker'></div>
+              <Link to='/#contact' className='nav-link'>
+                Contact
+              </Link>
+            </li>
+          </BrowserRouter>
         </ul>
       </div>
       <div className='navbar-responsive'>
